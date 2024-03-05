@@ -17,23 +17,13 @@ export default {
 }
 </script>
 <style scoped lang="">
-:root {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-body {
-  height: 100vh;
-  overflow: hidden;
-}
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 2rem;
-  background: #242526;
+  background: #618264;
   color: white;
   font-weight: 500;
   display: flex;

@@ -123,7 +123,7 @@ export default {
   right: 0;
   width: 150px;
   height: 70px;
-  background-color: #242526;
+  background-color: #79AC78;
   display: flex;
   justify-content: center;
   align-items: center;

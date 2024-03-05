@@ -92,7 +92,7 @@ export default {
   nav{
     z-index: 9999;
     width: 100%;
-    background: #242526;
+    background: #618264;
   }
   nav .wrapper{
     position: relative;
@@ -127,14 +127,14 @@ export default {
     transition: all 0.3s ease;
   }
   .nav-links li a:hover{
-    background: #3A3B3C;
+    background: #79AC78;
   }
   .nav-links .mobile-item{
     display: none;
   }
   .nav-links .drop-menu{
     position: absolute;
-    background: #242526;
+    background: #618264;
     width: 180px;
     line-height: 45px;
     top: 85px;
@@ -167,12 +167,12 @@ export default {
     visibility: hidden;
   }
   .mega-box .content{
-    background: #242526;
+    background: #618264;
     padding: 25px 20px;
     display: flex;
     width: 100%;
     justify-content: space-between;
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    /* box-shadow: 0 6px 10px rgba(0,0,0,0.15); */
   }
   .mega-box .content .row{
     width: calc(25% - 30px);
