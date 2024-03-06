@@ -78,6 +78,8 @@ export default {
   justify-content: center;
   margin-top: 50px;
   width: 100%;
+  margin-bottom: 100px; /* Ajoutez une marge en bas pour éviter que la dernière card soit cachée par le footer */
+  min-height: calc(100vh - 200px)
 }
 
 .ads-descrption {

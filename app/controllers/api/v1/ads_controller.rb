@@ -54,7 +54,7 @@ module Api
 
       def format_date(date_string)
         date = Date.parse(date_string)
-        date.strftime('%e %B %Y')
+        date.strftime('%d/%m/%Y')
       end
 
       # Use callbacks to share common setup or constraints between actions.
