@@ -2,15 +2,20 @@
   <div>
     <div class="search-bar-container">
     <b-field class="search-bar">
-            <b-input placeholder="Azalée..."
-                type="search">
+            <b-input class="search" placeholder="Azalée..."
+                type="search" v-model="search"
+                icon-right="close-circle"
+                icon-right-clickable
+                @icon-right-click="clearIconClick">>
             </b-input>
             <b-button
-                icon-right="search" />
+            class="search-btn"
+                icon-right="search" @click="searchAds" />
         </b-field>
         </div>
         <div class="cards-container">
         <div v-for="ad in ads" :key="ad.id" :ad="ad">
+          <router-link to="/signin">
         <div class="card">
   <div class="photo">
     <img src="../assets/bonsai-catégories.jpg">
@@ -30,11 +35,20 @@
       <b-icon pack="fas" icon="clock" size="is-small"></b-icon>
       <p>{{ ad.created_at }}</p>
     </div>
-    <p class="ads-descrption">{{ ad.description }}</p>
+    <p class="ads-description">{{ ad.description }}</p>
   </div>
 </div>
+</router-link>
 </div>
+<!-- <b-pagination
+      v-model="currentPage"
+      :total="totalPages"
+      @input="changePage"
+      :aria-next-label="nextLabel"
+      :aria-previous-label="prevLabel"
+    ></b-pagination> -->
 </div>
+
   </div>
 </template>
 
@@ -43,23 +57,55 @@ export default {
   name: 'Home',
   data () {
     return {
-      ads: []
+      ads: [],
+      search: '',
+      currentPage: 1,
+      pageSize: 5
     }
   },
   created () {
-    this.$http.secured.get('/api/v1/ads')
-      .then(response => {
-        this.ads = response.data
-        console.log('ads:', this.ads)
-      })
-      .catch(error => {
-        console.error('Error fetching ads:', error)
-      })
+    this.fetchAds()
+  },
+  methods: {
+    fetchAds () {
+      this.$http.secured.get('/api/v1/ads')
+        .then(response => {
+          this.ads = response.data.ads
+          console.log('ads:', this.ads)
+          this.totalPages = response.data.total
+          console.log('totalPages:', this.totalPages)
+        })
+        .catch(error => {
+          console.error('Error fetching ads:', error)
+        })
+    },
+    searchAds () {
+      this.$http.secured.get('/api/v1/ads?search=' + this.search)
+        .then(response => {
+          this.ads = response.data.ads
+        })
+        .catch(error => {
+          console.error('Error fetching ads:', error)
+        })
+    },
+    clearIconClick () {
+      this.search = ''
+      this.loadAllAds()
+    },
+    loadAllAds () {
+      this.fetchAds()
+    }
   }
 }
 </script>
 
 <style scoped lang="">
+.search-btn {
+  background-color: #79AC78;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
 .search-bar-container {
   display: flex;
   justify-content: center;
@@ -68,7 +114,11 @@ export default {
 
 .search-bar {
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+
+.search-bar .search {
+  width: 400px;
 }
 
 .cards-container {
@@ -78,11 +128,11 @@ export default {
   justify-content: center;
   margin-top: 50px;
   width: 100%;
-  margin-bottom: 100px; /* Ajoutez une marge en bas pour éviter que la dernière card soit cachée par le footer */
+  margin-bottom: 100px;
   min-height: calc(100vh - 200px)
 }
 
-.ads-descrption {
+.ads-description {
   margin-top: 10px;
   margin-right: 20px;
 }
@@ -139,6 +189,7 @@ export default {
 }
 
 .card {
+  cursor: pointer;
   width: 800px;
   height: auto;
   background: white;

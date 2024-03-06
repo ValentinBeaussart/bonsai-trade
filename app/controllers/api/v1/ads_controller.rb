@@ -6,16 +6,21 @@ module Api
       # before_action :authorize_access_request!
       before_action :set_ad, only: %i[show update destroy]
 
-      # GET /ads
       def index
-        @ads = Ad.includes(:user, :category).all
+        @ads = if params[:search].present?
+                 Ad.includes(:user, :category).where('name LIKE ?', "%#{params[:search]}%")
+               else
+                 Ad.includes(:user, :category).all
+               end
 
-        render json: formatted_ads
+        total = @ads.count
+
+        render json: { ads: formatted_ads, total: }
       end
 
       # GET /ads/1
       def show
-        render json: @ad
+        render json: { ad: @ad }
       end
 
       # POST /ads
@@ -64,7 +69,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def ad_params
-        params.require(:ad).permit(:name, :latin_name, :description, :place, :price, :category_id, :user_id)
+        params.require(:ad).permit(:name, :latin_name, :description, :place, :price, :category_id, :user_id, :search)
       end
     end
   end
