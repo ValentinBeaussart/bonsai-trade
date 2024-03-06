@@ -1,6 +1,6 @@
 # README
 
-Command : 
+Commands : 
 - redis-server
 - yarn dev
 - rails s
