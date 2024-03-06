@@ -49,7 +49,7 @@ export default {
       localStorage.csrf = response.data.csrf
       localStorage.signedIn = true
       this.error = ''
-      this.$router.replace('/home')
+      window.location.reload()
     },
     signinFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.error) || ''
@@ -77,6 +77,11 @@ export default {
   margin-top: 30px;
   width: 10%;
   color: white;
+  background-color: #618264;
+}
+
+.signin-btn:hover {
+  background-color: #79AC78;
 }
 
 .signin-email{

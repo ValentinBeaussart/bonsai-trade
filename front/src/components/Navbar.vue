@@ -46,11 +46,11 @@
             </div>
           </div>
         </li>
+        <li><router-link to="/createad">Publier une annonce</router-link></li>
         <li><router-link to="/signin" v-if="!signedIn()">Connexion</router-link></li>
         <li><router-link to="/signup" v-if="!signedIn()">S'inscrire</router-link></li>
-        <li  @click="signOut"><router-link to="/home" v-if="signedIn()">Déconnexion</router-link></li>
         <li><router-link to="/profile" v-if="signedIn()">Profile</router-link></li>
-        <li><router-link to="/createad">Publier une annonce</router-link></li>
+        <li  @click="signOut"><router-link to="/home" v-if="signedIn()">Déconnexion</router-link></li>
       </ul>
       <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
     </div>
@@ -74,9 +74,9 @@ export default {
         .then(response => {
           delete localStorage.csrf
           delete localStorage.signedIn
-          this.$router.replace('/')
+          window.location.reload()
         })
-        .catch(error => this.setError(error, 'Cannot sign out'))
+        .catch(error => this.setError(error, 'Un problème empêche la déconnexion'))
     }
   }
 }

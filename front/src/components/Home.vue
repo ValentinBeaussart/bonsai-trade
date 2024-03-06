@@ -133,6 +133,7 @@ export default {
 .price-box p {
   margin: 0;
   color: white;
+  font-weight: bold;
 }
 
 .card {
