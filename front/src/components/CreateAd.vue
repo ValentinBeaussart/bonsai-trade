@@ -31,3 +31,16 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="">
+.signin-btn {
+  margin-top: 30px;
+  width: 10%;
+  color: white;
+  background-color: #618264;
+}
+
+.signin-btn:hover {
+  background-color: #79AC78;
+}
+</style>

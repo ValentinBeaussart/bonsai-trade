@@ -172,7 +172,6 @@ export default {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    /* box-shadow: 0 6px 10px rgba(0,0,0,0.15); */
   }
   .mega-box .content .row{
     width: calc(25% - 30px);

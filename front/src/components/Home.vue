@@ -139,7 +139,7 @@ export default {
   margin-top: 50px;
   width: 100%;
   margin-bottom: 100px;
-  min-height: calc(100vh - 200px)
+  min-height: 500px; /* Valeur fixe pour la hauteur minimale */
 }
 
 .ads-description {
