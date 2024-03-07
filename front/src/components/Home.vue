@@ -6,13 +6,17 @@
                 type="search" v-model="search"
                 icon-right="close-circle"
                 icon-right-clickable
-                @icon-right-click="clearIconClick">>
+                @icon-right-click="clearIconClick"
+                @input="searchAds">
             </b-input>
             <b-button
             class="search-btn"
                 icon-right="search" @click="searchAds" />
         </b-field>
         </div>
+        <div v-if="ads.length === 0" class="no-result-message">
+        Aucun résultat trouvé pour "{{ search }}"
+      </div>
         <div class="cards-container">
         <div v-for="ad in ads" :key="ad.id" :ad="ad">
           <router-link to="/signin">
@@ -38,6 +42,7 @@
     <p class="ads-description">{{ ad.description }}</p>
   </div>
 </div>
+
 </router-link>
 </div>
 <!-- <b-pagination
@@ -100,6 +105,11 @@ export default {
 </script>
 
 <style scoped lang="">
+.no-result-message {
+  text-align: center;
+  margin-top: 80px;
+}
+
 .search-btn {
   background-color: #79AC78;
   color: white;

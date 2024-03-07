@@ -4,13 +4,14 @@
       <div type="is-danger" v-if="error">{{ error }}</div>
       <div class="signin-email">
         <b-field label="Email">
-          <b-input placeholder="bonsaitrade@bonsai.fr" type="email" icon-pack="fas" icon="envelope" v-model="email">
+          <b-input placeholder="bonsai-trade@contact.fr" type="email" icon-pack="fas" icon="envelope" v-model="email">
           </b-input>
         </b-field>
       </div>
       <div class="signin-password">
         <b-field label="Mot de passe">
-          <b-input placeholder="IloveBonsai" type="password" password-reveal v-model="password">
+          <b-input placeholder="Ilovebonsai123456789" type="password" password-reveal v-model="password" icon-pack="fas"
+          icon="lock">
           </b-input>
         </b-field>
       </div>

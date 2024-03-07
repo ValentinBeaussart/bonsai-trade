@@ -3,19 +3,19 @@
     <div class="signup-form">
       <div type="is-danger" v-if="error">{{ error }}</div>
       <b-field class="signup-input" label="Nom d'utilisateur">
-        <b-input placeholder="Valentin" v-model="username" type="username" icon-pack="fas" icon="user">
+        <b-input placeholder="ValentinBonsai" v-model="username" type="username" icon-pack="fas" icon="user">
         </b-input>
       </b-field>
       <b-field class="signup-input" label="Email">
-        <b-input placeholder="bonsai.trade@bonsai.com" v-model="email" type="email" icon-pack="fas" icon="envelope">
+        <b-input placeholder="bonsai-trade@contact.fr" v-model="email" type="email" icon-pack="fas" icon="envelope">
         </b-input>
       </b-field>
       <b-field class="signup-input" label="Mot de passe">
-        <b-input placeholder="123456789" v-model="password" password-reveal type="password" icon-pack="fas" icon="lock">
+        <b-input placeholder="Ilovebonsai123456789" v-model="password" password-reveal type="password" icon-pack="fas" icon="lock">
         </b-input>
       </b-field>
       <b-field class="signup-input" label="Confirmer mot de passe">
-        <b-input placeholder="123456789" v-model="password_confirmation" password-reveal type="password" icon-pack="fas"
+        <b-input placeholder="Ilovebonsai123456789" v-model="password_confirmation" password-reveal type="password" icon-pack="fas"
           icon="lock">
         </b-input>
       </b-field>
@@ -64,7 +64,7 @@ export default {
       window.location.reload()
     },
     signupFailed (error) {
-      this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'
+      this.error = (error.response && error.response.data && error.response.data.error) || 'Un problème est survenu. Veuillez réessayer.'
       delete localStorage.csrf
       delete localStorage.signedIn
     },
