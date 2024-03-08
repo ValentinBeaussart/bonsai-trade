@@ -6,7 +6,7 @@
       <input type="radio" name="slider" id="close-btn">
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-        <li><router-link to="/home">Accueil</router-link></li>
+        <li><router-link to="/home">Annonces</router-link></li>
         <li>
           <a class="desktop-item">Catégories</a>
           <input type="checkbox" id="showMega">
@@ -48,9 +48,9 @@
         </li>
         <li><router-link to="/createad">Publier une annonce</router-link></li>
         <li><router-link to="/signin" v-if="!signedIn()">Connexion</router-link></li>
-        <li><router-link to="/signup" v-if="!signedIn()">S'inscrire</router-link></li>
+        <li class="sign-out-sign-up-link"><router-link to="/signup" v-if="!signedIn()">S'inscrire</router-link></li>
         <li><router-link to="/profile" v-if="signedIn()">Profile</router-link></li>
-        <li  @click="signOut"><router-link to="/home" v-if="signedIn()">Déconnexion</router-link></li>
+        <li class="sign-out-sign-up-link" @click="signOut"><router-link to="/home" v-if="signedIn()">Déconnexion</router-link></li>
       </ul>
       <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
     </div>
@@ -89,6 +89,11 @@ export default {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
+
+  .sign-out-sign-up-link a{
+    background-color: #79AC78!important;
+  }
+
   nav{
     z-index: 9999;
     width: 100%;
@@ -149,13 +154,7 @@ export default {
     opacity: 1;
     visibility: visible;
   }
-  .drop-menu li a{
-    width: 100%;
-    display: block;
-    padding: 0 0 0 15px;
-    font-weight: 400;
-    border-radius: 0px;
-  }
+
   .mega-box{
     z-index: 999;
     position: absolute;
@@ -235,7 +234,6 @@ export default {
       box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
       transition: all 0.3s ease;
     }
-    /* custom scroll bar */
     ::-webkit-scrollbar {
       width: 10px;
     }
