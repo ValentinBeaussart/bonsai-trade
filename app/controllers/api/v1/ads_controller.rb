@@ -3,7 +3,7 @@
 module Api
   module V1
     class AdsController < ApplicationController # rubocop:disable Style/Documentation
-      # before_action :authorize_access_request!
+      before_action :authorize_access_request!
       before_action :set_ad, only: %i[show update destroy]
 
       def index
