@@ -138,8 +138,7 @@ export default {
   justify-content: center;
   margin-top: 50px;
   width: 100%;
-  margin-bottom: 100px;
-  min-height: 500px; /* Valeur fixe pour la hauteur minimale */
+  min-height: 500px;
 }
 
 .ads-description {
