@@ -18,45 +18,48 @@
   </div>
       <div v-else>
         <div class="steps-container">
-        <b-steps class="steps">
+        <b-steps :has-navigation="false" :custom-navigation="true"
+        class="steps">
         <b-step-item class="step-item" label="Catégorie" icon="bars">
           <b-field label="Sélectionnez une catégorie">
-            <b-select icon="bars">
+            <b-select v-model="category" icon="bars">
                 <optgroup label="Bonsaï">
-                    <option value="flint">Bonsaï</option>
-                    <option value="silver">Prébonsaï</option>
-                    <option value="vane">Yamadori</option>
-                    <option value="billy">Plant de pépinière</option>
+                    <option value="bonsai">Bonsaï</option>
+                    <option value="prebonsai">Prébonsaï</option>
+                    <option value="yamadori">Yamadori</option>
+                    <option value="plant_pepiniere">Plant de pépinière</option>
                 </optgroup>
 
                 <optgroup label="Poterie">
-                    <option value="heisenberg">Pot rond</option>
-                    <option value="jesse">Pot rectangulaire</option>
-                    <option value="saul">Pot spéciaux</option>
-                    <option value="mike">Pot mame</option>
+                    <option value="pot_rond">Pot rond</option>
+                    <option value="pot_rectangulaire">Pot rectangulaire</option>
+                    <option value="pot_speciaux">Pot spéciaux</option>
+                    <option value="pot_mame">Pot mame</option>
                 </optgroup>
 
                 <optgroup label="Outillage">
-                    <option value="tyrion-lannister">Coupe</option>
-                    <option value="jamie-lannister">Ligaturage</option>
-                    <option value="daenerys-targaryen">Rempotage</option>
-                    <option value="jon-snow">Arrosage</option>
+                    <option value="coupe">Coupe</option>
+                    <option value="ligaturage">Ligaturage</option>
+                    <option value="rempotage">Rempotage</option>
+                    <option value="arrosage">Arrosage</option>
                 </optgroup>
             </b-select>
         </b-field>
+
         </b-step-item>
         <b-step-item class="step-item" label="Détails" icon="info">
           <b-field label="Titre">
             <b-input v-model="name"></b-input>
         </b-field>
         <b-field label="Localisation">
-            <b-input v-model="name"></b-input>
+            <b-input v-model="place"></b-input>
         </b-field>
         <b-field label="Prix">
-            <b-input v-model="name"></b-input>
+            <b-input v-model="price"></b-input>
         </b-field>
         <b-field label="Description">
-            <b-input maxlength="200" type="textarea"></b-input>
+            <b-input  v-model="description"               minlength="10"
+            maxlength="100" type="textarea"></b-input>
         </b-field>
         <b-field>
             <b-upload v-model="dropFiles"
@@ -89,6 +92,10 @@
         </div>
         </b-step-item>
         <b-step-item class="step-item" label="Confirmer" icon="check"></b-step-item>
+        <template v-if="customNavigation" #navigation="{ next }">
+          <b-button   @click="next.action"
+          type="is-primary" class="signin-btn">Valider</b-button>
+          </template>
     </b-steps>
     </div>
       </div>
@@ -100,7 +107,14 @@ export default {
   name: 'CreateAd',
   data () {
     return {
-      dropFiles: []
+      category: '',
+      name: '',
+      description: '',
+      price: 0,
+      place: '',
+      dropFiles: [],
+      hasNavigation: false,
+      customNavigation: true
     }
   },
   created () {
@@ -112,6 +126,9 @@ export default {
     },
     signedIn () {
       return localStorage.signedIn
+    },
+    next () {
+      this.$refs.steps.nextStep()
     }
   }
 }
@@ -121,11 +138,25 @@ export default {
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  height: auto;
 }
 
 .steps-container {
   margin-top: 50px;
+}
 
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 100px auto;
+  margin-top: 100px;
+  border: 1px solid #ddd;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .signup-link {

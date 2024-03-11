@@ -18,7 +18,6 @@ export default {
 </script>
 <style scoped lang="">
 .footer {
-  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
