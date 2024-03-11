@@ -3,7 +3,7 @@
 module Api
   module V1
     class AdsController < ApplicationController # rubocop:disable Style/Documentation
-      before_action :authorize_access_request!
+      # before_action :authorize_access_request!
       before_action :set_ad, only: %i[show update destroy]
 
       def index
@@ -25,10 +25,14 @@ module Api
 
       # POST /ads
       def create
+        category_name = params[:category_name]
+        category = Category.find_by(name: category_name)
+
         @ad = current_user.ads.build(ad_params)
+        @ad.category_id = category.id
 
         if @ad.save
-          render json: @ad, status: :created, location: @ad
+          render json: @ad, status: :created
         else
           render json: @ad.errors, status: :unprocessable_entity
         end
@@ -69,7 +73,8 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def ad_params
-        params.require(:ad).permit(:name, :latin_name, :description, :place, :price, :category_id, :user_id, :search)
+        params.require(:ad).permit(:name, :latin_name, :description, :place, :price, :category_id, :user_id, :search,
+                                   :category_name)
       end
     end
   end
