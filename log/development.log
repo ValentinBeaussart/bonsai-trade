@@ -13497,3 +13497,813 @@ ArgumentError (wrong number of arguments (given 0, expected 1)):
   
 app/controllers/application_controller.rb:13:in `not_authorized'
 app/controllers/signin_controller.rb:18:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-17 18:16:48 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 3.5ms | Allocations: 893)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/application_controller.rb:13:in `not_authorized'
+app/controllers/signin_controller.rb:18:in `create'
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-17 18:20:13 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 6676)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-17 18:20:17 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 6631)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-17 18:29:18 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 235ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 1243)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-17 18:29:20 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 6676)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 10:14:36 +0100
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:14:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AdsController#index as HTML
+Processing by SigninController#destroy as HTML
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started POST "/refresh" for 127.0.0.1 at 2024-03-18 10:14:37 +0100
+Processing by RefreshController#create as HTML
+  Parameters: {"refresh"=>{}}
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 214)
+
+
+  [1m[36mAd Count (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 233ms (Views: 0.5ms | ActiveRecord: 10.7ms | Allocations: 47555)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:17:28 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 247ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 4229)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:17:34 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 6737)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:17:36 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 6670)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 10:17:36 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 855)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:17:37 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 6655)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:21:47 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 245ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1006)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:21:50 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 10:21:50 +0100
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 7360)
+
+
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:21:51 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 6637)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:22:33 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 241ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:24:40 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 242ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 979)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 10:24:43 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:24:44 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 6638)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:25:20 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 246ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:25:23 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 6638)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 10:25:23 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:25:24 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 6637)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:25:26 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 0.1ms | Allocations: 641)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/application_controller.rb:13:in `not_authorized'
+app/controllers/signin_controller.rb:18:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:25:27 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 0.2ms | Allocations: 724)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/application_controller.rb:13:in `not_authorized'
+app/controllers/signin_controller.rb:18:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:25:37 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.1ms | Allocations: 621)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/application_controller.rb:13:in `not_authorized'
+app/controllers/signin_controller.rb:18:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:15 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 286ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 5634)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:29 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 1375)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:35 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1257)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:39 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:39 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:39 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:39 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:39 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:40 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:27:58 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 246ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 5630)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:28:21 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 244ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 617)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:28:26 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1299)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:28:28 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1254)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:51:50 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.co", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 2.9ms | Allocations: 1528)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:52:05 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@mail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:52:43 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 249ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1079)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:52:47 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 10:52:47 +0100
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Processing by SigninController#destroy as HTML
+  [1m[36mCategory Load (5.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 60ms (Views: 0.6ms | ActiveRecord: 10.1ms | Allocations: 17716)
+
+
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 7532)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:52:48 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 6677)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:53:59 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@mail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.8ms | Allocations: 3684)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass
+
+    if user.authenticate(params[:password])
+           ^^^^^^^^^^^^^):
+  
+app/controllers/signin_controller.rb:8:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:55:19 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@mail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 3045)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:55:23 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 249ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 3648)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:55:28 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 10:55:28 +0100
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 16283)
+
+
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 805)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 10:55:30 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 6677)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:55:51 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 245ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 624)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 10:56:57 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 241ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:30:55 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 254ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 908)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:31:30 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 252ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 603)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:35:01 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 260ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:36:54 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 249ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:38:51 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 256ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 606)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:40:00 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 262ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:41:24 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 256ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 603)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:46:09 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 256ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:47:45 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 247ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1009)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 11:47:48 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 11:47:48 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 42ms (Views: 0.7ms | ActiveRecord: 1.8ms | Allocations: 6682)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 11:47:49 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 27ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 6637)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:49:23 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 236ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 11:49:35 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 28ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 6637)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:50:40 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 247ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:50:54 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 247ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 602)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 11:59:24 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 256ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 875)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 12:02:40 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 245ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 12:02:44 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 245ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 12:03:26 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 242ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 12:04:35 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 249ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 12:04:51 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 246ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 12:04:55 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 81ms (Views: 6.0ms | ActiveRecord: 3.4ms | Allocations: 6682)
+
+

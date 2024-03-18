@@ -2,7 +2,7 @@
   <div>
       <div class="signup-form">
         <div type="is-danger" v-if="error">{{ error }}</div>
-        <b-field class="signup-input" label="Nom d'utilisateur">
+        <!-- <b-field class="signup-input" label="Nom d'utilisateur">
           <b-input placeholder="ValentinBonsai" v-model="username" type="username" icon-pack="fas" icon="user">
           </b-input>
         </b-field>
@@ -20,7 +20,7 @@
             icon-pack="fas" icon="lock">
           </b-input>
         </b-field>
-        <b-button @click="signup" type="is-primary" class="signup-btn">Créer un compte</b-button>
+        <b-button @click="signup" type="is-primary" class="signup-btn">Créer un compte</b-button> -->
       </div>
     </div>
 </template>

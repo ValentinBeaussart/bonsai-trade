@@ -5,9 +5,10 @@ class SigninController < ApplicationController # rubocop:disable Style/Documenta
 
   def create # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
+
+    if user&.authenticate(params[:password])
       payload = { user_id: user.id }
-      session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
+      session = JWTSessions::Session.new(payload:, refresh_by_access_allowed: true)
       tokens = session.login
 
       response.set_cookie(JWTSessions.access_cookie, value: tokens[:access], httponly: true,
@@ -15,12 +16,12 @@ class SigninController < ApplicationController # rubocop:disable Style/Documenta
 
       render json: { csrf: tokens[:csrf] }
     else
-      not_authorized
+      not_found
     end
   end
 
   def destroy
-    session = JWTSessions::Session.new(payload: payload)
+    session = JWTSessions::Session.new(payload:)
     session.flush_by_access_payload
     render json: :ok
   end
