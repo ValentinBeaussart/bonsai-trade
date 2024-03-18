@@ -14307,3 +14307,802 @@ Processing by Api::V1::AdsController#index as HTML
 Completed 200 OK in 81ms (Views: 6.0ms | ActiveRecord: 3.4ms | Allocations: 6682)
 
 
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 12:06:47 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 30ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 6637)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 12:06:49 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 12:06:50 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 2.9ms | Allocations: 6637)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 12:06:59 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 244ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 605)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 12:30:43 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 239ms (Views: 0.1ms | ActiveRecord: 6.4ms | Allocations: 1259)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 12:38:52 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 27ms (Views: 0.8ms | ActiveRecord: 3.4ms | Allocations: 6926)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 12:39:04 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 12:39:05 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (149.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 186ms (Views: 1.4ms | ActiveRecord: 149.8ms | Allocations: 6637)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:30:54 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b48c0548>, params: {"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 344ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1720)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 17:36:08 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 322ms (Views: 0.2ms | ActiveRecord: 14.2ms | Allocations: 6100)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 17:36:11 +0100
+Processing by Api::V1::AdsController#index as HTML
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 17:36:11 +0100
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 87ms (Views: 0.6ms | ActiveRecord: 1.9ms | Allocations: 16410)
+
+
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 806)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 17:36:12 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (2.9ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 5.2ms | Allocations: 6677)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 17:36:17 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 1.2ms | Allocations: 6637)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:36:46 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"toto", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"toto", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4410c28>, params: {"email"=>"toto", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"toto", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 237ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1194)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:37:28 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b43e2288>, params: {"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 253ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 782)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:39:15 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"l", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"l", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b43bd460>, params: {"email"=>"l", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"l", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 239ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 783)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:41:19 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"ss", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"ss", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b43966d0>, params: {"email"=>"ss", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"ss", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 246ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 783)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:42:33 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"toto", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"toto"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b6d0e990>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"toto", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"toto"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 16:42:34.015565"], ["updated_at", "2024-03-18 16:42:34.015565"], ["username", "toto"]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 200 OK in 317ms (Views: 0.3ms | ActiveRecord: 11.2ms | Allocations: 7965)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 17:42:39 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 927)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 17:42:39 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 59ms (Views: 1.2ms | ActiveRecord: 2.1ms | Allocations: 15971)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 17:42:39 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 17ms (Views: 1.0ms | ActiveRecord: 1.7ms | Allocations: 6692)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:44:52 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b465e4f8>, params: {"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"ff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ff"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `email_taken?'
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 1.7ms | Allocations: 8321)
+
+
+  
+NameError (undefined local variable or method `user' for #<SignupController:0x00000000031538>
+
+    user.errors.add(:password_confirmation, 'Les mots de passe ne correspondent pas.')
+    ^^^^
+Did you mean?  super):
+  
+app/controllers/signup_controller.rb:46:in `validate_passwords_match'
+app/controllers/signup_controller.rb:7:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 17:45:41 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4338940>, params: {"email"=>"d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "d"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `email_taken?'
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 0.2ms | Allocations: 3410)
+
+
+  
+NameError (undefined local variable or method `user' for #<SignupController:0x000000000316f0>
+
+    user.errors.add(:password_confirmation, 'Les mots de passe ne correspondent pas.')
+    ^^^^
+Did you mean?  super):
+  
+app/controllers/signup_controller.rb:46:in `validate_passwords_match'
+app/controllers/signup_controller.rb:7:in `create'
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 18:15:07 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 252ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 1345)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:15:49 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"fffffff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"fffffff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b492b6e0>, params: {"email"=>"fffffff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"fffffff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fffffff"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `email_taken?'
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.2ms | Allocations: 3481)
+
+
+  
+NameError (undefined local variable or method `user' for #<SignupController:0x00000000031970>
+
+    user.errors.add(:password_confirmation, 'Les mots de passe ne correspondent pas.')
+    ^^^^
+Did you mean?  super):
+  
+app/controllers/signup_controller.rb:46:in `validate_passwords_match'
+app/controllers/signup_controller.rb:7:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:36:04 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4413f68>, params: {"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 261ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4628)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:36:13 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b7475878>, params: {"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"f", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "f"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:36:13.740178"], ["updated_at", "2024-03-18 17:36:13.740178"], ["username", "valentin.beaussart@gmail.com"]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 200 OK in 252ms (Views: 0.1ms | ActiveRecord: 8.0ms | Allocations: 3101)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 18:36:18 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 927)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 18:36:19 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 41ms (Views: 0.8ms | ActiveRecord: 3.2ms | Allocations: 16000)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:36:42 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"f", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"f"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b6c696c0>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"f", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"f"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:36:42.841270"], ["updated_at", "2024-03-18 17:36:42.841270"], ["username", "f"]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 200 OK in 254ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 2759)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 18:36:46 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 6669)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 18:36:46 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 688)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 18:36:47 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 6637)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:37:22 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"rtrtrt", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"rtrtrt"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b46e66f0>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"rtrtrt", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"rtrtrt"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:37:22.452123"], ["updated_at", "2024-03-18 17:37:22.452123"], ["username", "rtrtrt"]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 200 OK in 270ms (Views: 0.1ms | ActiveRecord: 8.5ms | Allocations: 7605)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:42:29 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"fr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"fr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:34:in `email_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4332c48>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"fr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"fr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mUser Create (3.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:42:29.625206"], ["updated_at", "2024-03-18 17:42:29.625206"], ["username", "fr"]]
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 257ms (Views: 0.2ms | ActiveRecord: 11.0ms | Allocations: 9211)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:19:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:43:11 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:34:in `email_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b6d788b8>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:43:11.985645"], ["updated_at", "2024-03-18 17:43:11.985645"], ["username", "ddddd"]]
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 254ms (Views: 0.2ms | ActiveRecord: 14.0ms | Allocations: 9213)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:19:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:43:30 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b48344a8>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ddddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:43:30.483162"], ["updated_at", "2024-03-18 17:43:30.483162"], ["username", "ddddd"]]
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 288ms (Views: 0.2ms | ActiveRecord: 14.2ms | Allocations: 8607)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:19:in `create'
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 18:49:12 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 55ms (Views: 0.6ms | ActiveRecord: 3.6ms | Allocations: 16234)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 18:49:18 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 232ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1504)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 18:49:23 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 6727)
+
+
+Started DELETE "/signin" for 127.0.0.1 at 2024-03-18 18:49:23 +0100
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 18:49:25 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 6637)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:52:05 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:34:in `email_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4500ac0>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:52:05.712512"], ["updated_at", "2024-03-18 17:52:05.712512"], ["username", "frr"]]
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 253ms (Views: 0.1ms | ActiveRecord: 5.0ms | Allocations: 3750)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:19:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:52:18 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:31:in `username_exists?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ (rdbg)//home/valentin/code/ValentinBeaussart/bonsai-trade/bonsai-trade/app/controllers/signup_controller.rb:1:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:31:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b6cf45e0>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:54:45.488296"], ["updated_at", "2024-03-18 17:54:45.488296"], ["username", "frr"]]
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 146863ms (Views: 0.2ms | ActiveRecord: 5.9ms | Allocations: 175172)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:20:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:54:47 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:31:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b6d04b98>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:54:50.790354"], ["updated_at", "2024-03-18 17:54:50.790354"], ["username", "frr"]]
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 3043ms (Views: 0.2ms | ActiveRecord: 13.5ms | Allocations: 56887)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:20:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:55:13 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b48fc340>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:55:13.688628"], ["updated_at", "2024-03-18 17:55:13.688628"], ["username", "frr"]]
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 256ms (Views: 0.2ms | ActiveRecord: 14.9ms | Allocations: 8622)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:19:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:55:26 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:31:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4905440>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:55:42 +0100
+Completed 500 Internal Server Error in 16193ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 56247)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:22:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:55:42 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:31:in `username_exists?'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4467988>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+  ↳ app/controllers/signup_controller.rb:31:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b48aabd0>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:55:45.810284"], ["updated_at", "2024-03-18 17:55:45.810284"], ["username", "frr"]]
+  [1m[36mUser Create (5015.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:55:45.811335"], ["updated_at", "2024-03-18 17:55:45.811335"], ["username", "frr"]]
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+  ↳ app/controllers/signup_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 6650ms (Views: 0.1ms | ActiveRecord: 5016.0ms | Allocations: 59606)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked):
+  
+Completed 500 Internal Server Error in 7985ms (Views: 0.2ms | ActiveRecord: 10.2ms | Allocations: 109651)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:20:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:56:06 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frrr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:34:in `email_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b6bd4610>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "valentin.beaussart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-18 17:56:06.499601"], ["updated_at", "2024-03-18 17:56:06.499601"], ["username", "frrr"]]
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 258ms (Views: 0.2ms | ActiveRecord: 13.1ms | Allocations: 9296)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:19:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:56:17 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b454a5f8>, params: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 239ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1211)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:21:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:56:20 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b47f9380>, params: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 230ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1157)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:21:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:56:20 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4c7d2a8>, params: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:56:20 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b493b310>, params: {"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"frrrr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 254ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 10629)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 328ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 108868)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:21:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:56:33 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:30:in `username_exists?'
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4552780>, params: {"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 257ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1157)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/signup_controller.rb:21:in `create'
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:56:49 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "signup"=>{"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b45920d8>, params: {"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"fds", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"valentin.beaussart@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 269ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 5395)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 18:59:56 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b6cf2470>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frr"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 262ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 8729)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 19:00:03 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4bc83d0>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frrddddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 233ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 3316)
+
+
+Started POST "/signup" for 127.0.0.1 at 2024-03-18 19:00:15 +0100
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00007f38b4959108>, params: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"frrddddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "frrddddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 246ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 3327)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 19:00:59 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 231ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1073)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 19:01:19 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 256ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 5707)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 19:02:31 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 42ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 16022)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-18 19:05:54 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 6688)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-03-18 19:05:59 +0100
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 240ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1093)
+
+

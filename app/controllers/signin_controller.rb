@@ -29,6 +29,6 @@ class SigninController < ApplicationController # rubocop:disable Style/Documenta
   private
 
   def not_found
-    render json: { error: 'Adresse mail ou mot de passe incorrect.' }, status: :not_found
+    render json: { error: 'Adresse email ou mot de passe incorrect.' }, status: :not_found
   end
 end

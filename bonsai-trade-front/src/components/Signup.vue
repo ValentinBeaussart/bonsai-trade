@@ -1,28 +1,30 @@
 <template>
   <div>
-      <div class="signup-form">
-        <div type="is-danger" v-if="error">{{ error }}</div>
-        <!-- <b-field class="signup-input" label="Nom d'utilisateur">
-          <b-input placeholder="ValentinBonsai" v-model="username" type="username" icon-pack="fas" icon="user">
-          </b-input>
-        </b-field>
-        <b-field class="signup-input" label="Email">
-          <b-input placeholder="bonsai-trade@contact.fr" v-model="email" type="email" icon-pack="fas" icon="envelope">
-          </b-input>
-        </b-field>
-        <b-field class="signup-input" label="Mot de passe">
-          <b-input placeholder="Ilovebonsai123456789" v-model="password" password-reveal type="password" icon-pack="fas"
-            icon="lock">
-          </b-input>
-        </b-field>
-        <b-field class="signup-input" label="Confirmer mot de passe">
-          <b-input placeholder="Ilovebonsai123456789" v-model="password_confirmation" password-reveal type="password"
-            icon-pack="fas" icon="lock">
-          </b-input>
-        </b-field>
-        <b-button @click="signup" type="is-primary" class="signup-btn">Créer un compte</b-button> -->
-      </div>
+    <div class="signup-form">
+      <b-form-group label="Nom d'utilisateur" :state="usernameState">
+        <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
+          placeholder="BonsaiTradeDu69"></b-form-input>
+        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
+      </b-form-group>
+      <b-form-group class="mt-3" label="Email" :state="emailState">
+        <b-form-input id="input-email" type="email" v-model="email" :state="emailState" trim
+          placeholder="bonsai-trade@contact.fr"></b-form-input>
+        <div v-if="emailError" class="text-danger">Veuillez saisir votre adresse email.</div>
+      </b-form-group>
+      <b-form-group class="mt-3" label="Mot de passe" :state="passwordState">
+        <b-form-input id="input-password" type="password" v-model="password" :state="passwordState" trim
+          placeholder="Ilovebonsai123456789"></b-form-input>
+        <div v-if="passwordError" class="text-danger">Veuillez saisir votre mot de passe.</div>
+      </b-form-group>
+      <b-form-group class="mt-3" label="Confirmer le mot de passe" :state="passwordConfirmationState">
+        <b-form-input id="input-password_confirmation" type="password" v-model="password_confirmation"
+          :state="passwordConfirmationState" trim placeholder="Ilovebonsai123456789"></b-form-input>
+        <div v-if="passwordConfirmationError" class="text-danger">Veuillez confirmer votre mot de passe.</div>
+      </b-form-group>
+      <b-alert class="alert-password-email" v-if="error" show variant="danger">{{ error }}</b-alert>
+      <b-button :class="{ 'signup-btn-alert-active': error, 'signup-btn-error-inactive': !error }" @click="signup">Créer un compte</b-button>
     </div>
+  </div>
 </template>
 
 <script>
@@ -34,17 +36,33 @@ export default {
       email: '',
       password: '',
       password_confirmation: '',
-      error: ''
+      error: '',
+      usernameState: null,
+      emailState: null,
+      passwordState: null,
+      passwordConfirmationState: null,
+      usernameError: false,
+      emailError: false,
+      passwordError: false,
+      passwordConfirmationError: false
     }
-  },
-  created () {
-    this.checkedSignedIn()
-  },
-  updated () {
-    this.checkedSignedIn()
   },
   methods: {
     signup () {
+      this.usernameState = !!this.username
+      this.emailState = !!this.email
+      this.passwordState = !!this.password
+      this.passwordConfirmationState = !!this.password_confirmation
+
+      this.usernameError = !this.username
+      this.emailError = !this.email
+      this.passwordError = !this.password
+      this.passwordConfirmationError = !this.password_confirmation
+
+      if (!this.username || !this.email || !this.password || !this.password_confirmation) {
+        return
+      }
+
       this.$http.plain.post('/signup', {
         email: this.email,
         password: this.password,
@@ -68,11 +86,6 @@ export default {
       this.error = (error.response && error.response.data && error.response.data.error) || 'Un problème est survenu. Veuillez réessayer.'
       delete localStorage.csrf
       delete localStorage.signedIn
-    },
-    checkedSignedIn () {
-      if (localStorage.signedIn) {
-        this.$router.replace('/signin')
-      }
     }
   }
 }
@@ -80,22 +93,39 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
-.signup-btn {
-  margin-top: 30px;
-  width: 20%;
-  color: white;
-  background-color: #618264;
+.alert-password-email {
+  margin-top: 20px;
 }
 
-.signup-btn:hover {
+.signup-btn-alert-active:hover {
   background-color: #79AC78;
+  border-color: transparent;
+}
+
+.signup-btn-error-inactive:hover {
+  background-color: #79AC78;
+  border-color: transparent;
+}
+
+.signup-btn-alert-active {
+  margin-top: 10px;
+  color: white;
+  background-color: #618264;
+  border-color: transparent;
+}
+
+.signup-btn-error-inactive {
+  margin-top: 30px;
+  transition: margin-top 0.3s ease;
+  color: white;
+  background-color: #618264;
+  border-color: transparent;
 }
 
 .signup-form {
@@ -110,10 +140,5 @@ export default {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-}
-
-.signup-input {
-  margin-top: 20px;
-  width: 40%;
 }
 </style>
