@@ -2,6 +2,7 @@
 <template>
   <div id="app">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
     <Navbar></Navbar>
     <router-view/>
     <Footer></Footer>
@@ -21,8 +22,8 @@ export default {
 </script>
 
 <style>
-html, body {
-  height: auto;
+html, body, #app{
+  height: 100%;
   margin: 0;
   padding: 0;
 }

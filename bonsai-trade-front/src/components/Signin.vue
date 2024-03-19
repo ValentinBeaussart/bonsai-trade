@@ -2,16 +2,23 @@
   <div class="signin-form">
     <b-form-group label="Email" :state="emailState">
       <b-form-input id="input-email" type="email" v-model="email" :state="emailState" trim
-      placeholder="bonsai-trade@contact.fr"></b-form-input>
+        placeholder="bonsai-trade@contact.fr"></b-form-input>
       <div v-if="emailError" class="text-danger">Veuillez saisir votre adresse email.</div>
     </b-form-group>
     <b-form-group class="mt-3" label="Mot de passe" :state="passwordState">
       <b-form-input id="input-password" type="password" v-model="password" :state="passwordState" trim
-      placeholder="Ilovebonsai123456789"></b-form-input>
+        placeholder="Ilovebonsai123456789"></b-form-input>
       <div v-if="passwordError" class="text-danger">Veuillez saisir votre mot de passe.</div>
     </b-form-group>
     <b-alert class="alert-password-email" v-if="error" show variant="danger">{{ error }}</b-alert>
-    <b-button :class="{ 'signin-btn-alert-active': error, 'signin-btn-error-inactive': !error }" @click="signin">Se connecter</b-button>
+    <b-button :class="{ 'signin-btn-alert-active': error, 'signin-btn-error-inactive': !error }" @click="signin">Se
+      connecter</b-button>
+    <router-link to="/new_password">
+      <p class="signin-link">Mot de passe oublié ?</p>
+    </router-link>
+    <router-link to="/signup">
+      <p class="signin-link">S'inscrire</p>
+    </router-link>
   </div>
 </template>
 
@@ -79,6 +86,14 @@ export default {
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+.signin-link {
+  color: #618264;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .alert-password-email {

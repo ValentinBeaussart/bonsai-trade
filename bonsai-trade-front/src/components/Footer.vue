@@ -1,9 +1,13 @@
-
-<template lang="">
-  <div>
-    <div class="footer">&copy;<span> {{ currentYear }} </span><span> Bonsai Trade. Tous droits réservés.</span></div>
+<template>
+  <div class="wrapper">
+    <div class="content">
+      <div class="footer">
+        <div>&copy;<span>{{ currentYear }}</span><span> Bonsai Trade. Tous droits réservés.</span></div>
+      </div>
+    </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'Footer',
@@ -17,11 +21,19 @@ export default {
   }
 }
 </script>
-<style scoped lang="">
+
+<style scoped>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Utilisation de la hauteur de la fenêtre comme hauteur minimale */
+}
+
+.content {
+  flex: 1; /* Permet au contenu de prendre tout l'espace disponible */
+}
+
 .footer {
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 2rem;
   background: #618264;
   color: white;
@@ -30,6 +42,5 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
-  z-index: 999;
 }
 </style>
