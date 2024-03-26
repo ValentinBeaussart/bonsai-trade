@@ -26,11 +26,11 @@ export default {
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Utilisation de la hauteur de la fenêtre comme hauteur minimale */
+  min-height: 100vh;
 }
 
 .content {
-  flex: 1; /* Permet au contenu de prendre tout l'espace disponible */
+  flex: 1;
 }
 
 .footer {

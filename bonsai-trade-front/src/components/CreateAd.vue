@@ -3,11 +3,9 @@
       <div v-if="!signedIn()" class="centered">
         <div class="container-if-not-signin">
     <div class="content-if-not-signin">
-        <b-message type="is-danger" class="mr-3">
-          Vous devez être connecté pour publier une annonce
-        </b-message>
+      <b-alert show variant="danger">Vous devez être connecté pour publier une annonce</b-alert>
         <router-link to="/signin">
-          <b-button type="is-primary" class="signin-btn">Se connecter</b-button>
+          <b-button class="btn">Se connecter</b-button>
         </router-link>
         <p class="signup">Vous n'avez pas de compte ?</p>
         <router-link to="/signup">
@@ -17,38 +15,71 @@
     </div>
   </div>
       <div v-else>
-        <div class="steps-container">
-        <b-steps :custom-navigation="true" ref="step" :has-navigation="false"
-        class="steps">
-        <b-step-item class="step-item" label="Catégorie" icon="bars">
-          <b-field label="Sélectionnez une catégorie *">
-            <b-select v-model="category" icon="bars">
-                <optgroup label="Bonsaï">
-                    <option value="Immobilier">Immobilier</option>
-                    <option value="prebonsai">Prébonsaï</option>
-                    <option value="yamadori">Yamadori</option>
-                    <option value="plant_pepiniere">Plant de pépinière</option>
-                </optgroup>
+        <div v-if="currentStep === 1" class="create-ad-container">
+          <h2 class="mb-5">Publier votre annonce</h2>
+          <h4 class="mb-4">Choisissez une catégorie</h4>
+          <b-form-select v-model="category" class="m-2 mb-4">
+  <optgroup label="Bonsaï">
+    <option value="Bonsaï">Bonsaï</option>
+    <option value="Prébonsaï">Prébonsaï</option>
+    <option value="Yamadori">Yamadori</option>
+    <option value="Plant de pépinière">Plant de pépinière</option>
+  </optgroup>
+  <optgroup label="Poterie">
+    <option value="Pot rond">Pot rond</option>
+    <option value="Pot rectangulaire">Pot rectangulaire</option>
+    <option value="Pot spéciaux">Pot spéciaux</option>
+    <option value="Pot mame">Pot mame</option>
+  </optgroup>
+  <optgroup label="Outillage">
+    <option value="Coupe">Coupe</option>
+    <option value="Ligaturage">Ligaturage</option>
+    <option value="Rempotage">Rempotage</option>
+    <option value="Arrosage">Arrosage</option>
+  </optgroup>
+</b-form-select>
+<b-button @click="nextStep" class="btn">Suivant</b-button>
+<div class="create-ad-container" v-if="currentStep === 2">
+  <h2 class="mb-5">Publier votre annonce</h2>
+  <h4 class="mb-4">Informations</h4>
+  <b-form-input v-model="name" placeholder="Titre" class="m-2 mb-4"></b-form-input>
+  <b-form-input v-model="price" placeholder="Prix" type="number" class="m-2 mb-4"></b-form-input>
+  <b-form-input v-model="place" placeholder="Localisation" class="m-2 mb-4"></b-form-input>
+  <b-form-textarea v-model="description" placeholder="Description" rows="3" max-rows="6" class="m-2 mb-4"></b-form-textarea>
+  <b-button @click="createAd" class="btn">Valider</b-button>
+</div>
+</div>
+<!-- <b-form-group label="Titre" :state="usernameState">
+        <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
+          placeholder="BonsaiTradeDu69"></b-form-input>
+        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
+      </b-form-group>
+      <b-form-group label="Titre" :state="usernameState">
+        <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
+          placeholder="BonsaiTradeDu69"></b-form-input>
+        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
+      </b-form-group>
+      <b-form-group label="Titre" :state="usernameState">
+        <b-form-textarea
+      id="textarea"
+      v-model="text"
+      placeholder="Enter something..."
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
+      </b-form-group>
+      <b-form-group label="Titre" :state="usernameState">
+        <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
+          placeholder="BonsaiTradeDu69"></b-form-input>
+        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
+      </b-form-group>
+        <b-form-group label="Images" label-cols-sm="2">
+    <b-form-file id="file-default"></b-form-file>
+        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
+      </b-form-group> -->
 
-                <optgroup label="Poterie">
-                    <option value="pot_rond">Pot rond</option>
-                    <option value="pot_rectangulaire">Pot rectangulaire</option>
-                    <option value="pot_speciaux">Pot spéciaux</option>
-                    <option value="pot_mame">Pot mame</option>
-                </optgroup>
-
-                <optgroup label="Outillage">
-                    <option value="coupe">Coupe</option>
-                    <option value="ligaturage">Ligaturage</option>
-                    <option value="rempotage">Rempotage</option>
-                    <option value="arrosage">Arrosage</option>
-                </optgroup>
-            </b-select>
-        </b-field>
-      </b-step-item>
-
-        <b-step-item class="step-item" label="Détails" icon="info">
-          <b-field label="Titre *">
+          <!-- <b-field label="Titre *">
             <b-input placeHolder="Azalée Satsuki" class="input-info" v-model="name"></b-input>
         </b-field>
         <b-field label="Localisation *">
@@ -115,8 +146,8 @@
     type="is-primary" class="next-previous-step-btn">Valider</b-button>
   </div>
       </template>
-</b-steps>
-</div>
+</b-steps> -->
+
 </div>
 </div>
 </template>
@@ -132,9 +163,6 @@ export default {
       price: 0,
       place: '',
       dropFiles: [],
-      hasNavigation: false,
-      customNavigation: true,
-      allFieldsFilled: false,
       currentStep: 1
     }
   },
@@ -142,42 +170,8 @@ export default {
     this.signedIn()
   },
   methods: {
-    confirmCustom () {
-      this.$buefy.dialog.confirm({
-        title: 'Règles',
-        message: `Bonsai Trade est un site de Petites Annonces dédié au monde du bonsaï. Il est réservé à la vente, à l’échange ou à la recherche d’objet lié au monde du bonsaï. Les annonces paraissent automatiquement et resteront en ligne (sans intervention de l’annonceur) durant 60 jours.
-Bonsai Trade se réserve le droit de supprimer sans préavis toute annonce qui ne correspondrait pas à l’objet du site. Les objets contrefaits, les médias piratés, seront supprimés du site. De même, les publicités déguisées en annonce seront systématiquement supprimées.
-Bonsai Trade est un service mis à disposition des annonceurs mais ne certifie pas l’exactitude des informations publiées dans le cadre d’une annonce. Celle-ci n’engage que la seule responsabilité de l’annonceur. Bonsai Trade ne pourra être tenu responsable de litige pouvant intervenir entre les utilisateurs de son service de Petites Annonces.`,
-        confirmText: 'Accepter',
-        type: 'is-success'
-      })
-    },
-    checkFields () {
-      if (this.currentStep === 1) {
-        this.allFieldsFilled = this.category !== ''
-      } else if (this.currentStep === 2) {
-        this.allFieldsFilled =
-          this.name !== '' &&
-          this.description !== '' &&
-          this.price !== 0 &&
-          this.place !== '' &&
-          this.dropFiles.length > 0
-      }
-    },
-
-    deleteDropFile (index) {
-      this.dropFiles.splice(index, 1)
-    },
-
     signedIn () {
       return localStorage.signedIn
-    },
-
-    success () {
-      this.$buefy.toast.open({
-        message: 'Votre annonce a été créée avec succès',
-        type: 'is-success'
-      })
     },
 
     createAd () {
@@ -189,26 +183,9 @@ Bonsai Trade est un service mis à disposition des annonceurs mais ne certifie p
           }, 1500)
         })
         .catch(error => this.setError(error, 'Impossible de créer votre annonce'))
-    }
-  },
-  watch: {
-    category (newValue, oldValue) {
-      this.checkFields()
     },
-    name (newValue, oldValue) {
-      this.checkFields()
-    },
-    description (newValue, oldValue) {
-      this.checkFields()
-    },
-    price (newValue, oldValue) {
-      this.checkFields()
-    },
-    place (newValue, oldValue) {
-      this.checkFields()
-    },
-    dropFiles (newValue, oldValue) {
-      this.checkFields()
+    nextStep () {
+      this.currentStep++
     }
   }
 }
@@ -219,25 +196,6 @@ Bonsai Trade est un service mis à disposition des annonceurs mais ne certifie p
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   height: auto;
-}
-
-.steps-container {
-  margin-top: 50px;
-}
-
-.step-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  margin: 100px auto;
-  margin-top: 100px;
-  border: 1px solid #ddd;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 0;
 }
 
 .signup-link {
@@ -267,47 +225,27 @@ Bonsai Trade est un service mis à disposition des annonceurs mais ne certifie p
   text-align: center;
 }
 
-.signin-btn {
-  width: 40%;
+.btn {
   color: white;
   background-color: #618264;
+  border-color: transparent;
 }
 
-.signin-btn:hover {
+.btn:hover {
   background-color: #79AC78;
 }
 
-.politics-btn {
-  margin-top: 20px;
-  width: 20%;
-  color: white;
-  background-color: #618264;
-}
-
-.politics-btn:hover {
-  background-color: #79AC78;
-}
-
-.next-previous-step-btn {
-  width: 10%;
-  color: white;
-  background-color: #618264;
-}
-
-.next-previous-step-btn:hover {
-  background-color: #79AC78;
-}
-
-.btn-next-step-container {
+.create-ad-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 60%;
   margin: 100px auto;
-  margin-top: 20px;
-}
-
-.input-info {
-  width: 500px;
+  margin-top: 100px;
+  border: 1px solid #ddd;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
 }
 </style>

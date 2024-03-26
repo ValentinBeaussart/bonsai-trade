@@ -29,7 +29,7 @@ html, body, #app{
 }
 
 body {
-  background-color: #f5f5f5;
+  background-image: url('./assets/vigne-vierge.jpg');
 }
 
 </style>

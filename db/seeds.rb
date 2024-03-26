@@ -8,15 +8,17 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create!(username: 'ValB', email: 'valentin.beaussart@gmail.com', password: 'password', password_confirmation: 'password')
-User.create!(username: 'Val', email: 'valentin.beaussart@gmail.com', password: 'password', password_confirmation: 'password')
+User.create!(username: 'Valentin', email: 'elboboss@hotmail.fr', password: 'password', password_confirmation: 'password')
 
-Category.create!(name: 'Véhicules')
-Category.create!(name: 'Immobilier')
-
-Ad.create!(name: 'Renault Clio', latin_name: 'Renault Clio', description: 'Voiture en bon état', place: 'Paris',
-           price: 1000, category_id: 2, user_id: 1)
-Ad.create!(name: 'Peugeot 206', latin_name: 'Peugeot 206', description: 'Voiture en bon état', place: 'Paris',
-           price: 1000, category_id: 1, user_id: 2)
-Ad.create!(name: 'Appartement', latin_name: 'Appartement', description: 'Appartement en bon état', place: 'Paris',
-           price: 1000, category_id: 2, user_id: 1)
+Category.create!(name: 'Bonsaï')
+Category.create!(name: 'Prébonsaï')
+Category.create!(name: 'Yamadori')
+Category.create!(name: 'Plant de pépinière')
+Category.create!(name: 'Pot rond')
+Category.create!(name: 'Pot rectangulaire')
+Category.create!(name: 'Pot spéciaux')
+Category.create!(name: 'Pot mame')
+Category.create!(name: 'Coupe')
+Category.create!(name: 'Ligaturage')
+Category.create!(name: 'Rempotage')
+Category.create!(name: 'Arrosage')

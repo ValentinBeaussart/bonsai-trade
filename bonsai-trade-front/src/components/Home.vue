@@ -16,7 +16,7 @@
       </div>
       <div class="card-container">
         <router-link style="text-decoration:none" to="'/ad/'">
-        <b-card  v-for="ad in ads" :key="ad.id" :ad="ad" no-body class="overflow-hidden mt-3" style="width: 540px;">
+        <b-card  v-for="ad in ads" :key="ad.id" :ad="ad" no-body class="overflow-hidden mt-3" style="width: 900px; height: 300px">
     <b-row no-gutters>
       <b-col md="6">
         <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
@@ -24,7 +24,7 @@
       <b-col md="6">
         <b-card-body :title="ad.name">
           <b-card-text>
-           {{ ad.description }}
+            {{ truncateDescription(ad.description) }}
           </b-card-text>
           <div class="infos">
             <div class="price">
@@ -106,12 +106,22 @@ export default {
     },
     loadAllAds () {
       this.fetchAds()
+    },
+    truncateDescription (description) {
+      if (description.length > 60) {
+        return description.slice(0, 70) + ' [...]'
+      } else {
+        return description
+      }
     }
   }
 }
 </script>
 
 <style scoped lang="">
+.price {
+  font-weight: bold;
+}
 
 .card-container {
   display: grid;
