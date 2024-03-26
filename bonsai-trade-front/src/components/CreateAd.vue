@@ -18,7 +18,7 @@
         <div v-if="currentStep === 1" class="create-ad-container">
           <h2 class="mb-5">Publier votre annonce</h2>
           <h4 class="mb-4">Choisissez une catégorie</h4>
-          <b-form-select v-model="category" class="m-2 mb-4">
+          <b-form-select v-model="category" class="m-2 mb-4" required>
   <optgroup label="Bonsaï">
     <option value="Bonsaï">Bonsaï</option>
     <option value="Prébonsaï">Prébonsaï</option>
@@ -38,16 +38,22 @@
     <option value="Arrosage">Arrosage</option>
   </optgroup>
 </b-form-select>
-<b-button @click="nextStep" class="btn">Suivant</b-button>
-<div class="create-ad-container" v-if="currentStep === 2">
+<b-alert v-if="categoryError" show variant="danger">Veuillez sélectionner une catégorie.</b-alert>
+<div class="next-btn">
+<b-button @click="nextStep" class="step-btn mt-2">Suivant</b-button>
+</div>
+</div>
+<div v-if="currentStep === 2" class="create-ad-container">
   <h2 class="mb-5">Publier votre annonce</h2>
   <h4 class="mb-4">Informations</h4>
-  <b-form-input v-model="name" placeholder="Titre" class="m-2 mb-4"></b-form-input>
-  <b-form-input v-model="price" placeholder="Prix" type="number" class="m-2 mb-4"></b-form-input>
-  <b-form-input v-model="place" placeholder="Localisation" class="m-2 mb-4"></b-form-input>
-  <b-form-textarea v-model="description" placeholder="Description" rows="3" max-rows="6" class="m-2 mb-4"></b-form-textarea>
-  <b-button @click="createAd" class="btn">Valider</b-button>
-</div>
+  <b-form-input v-model="name" placeholder="Azalée Satsuki" class="m-2 mb-4"></b-form-input>
+  <b-form-input v-model="price" placeholder="500" type="number" class="m-2 mb-4"></b-form-input>
+  <b-form-input v-model="place" placeholder="Lyon" class="m-2 mb-4"></b-form-input>
+  <b-form-textarea v-model="description" placeholder="Magnifique azalée, cultivée depuis 20 ans. Floraison estivale blanche. À venir récupérer à Lyon, prix négociable." rows="3" max-rows="6" class="m-2 mb-4"></b-form-textarea>
+  <div class="next-previous-btn">
+  <b-button @click="previousStep" class="step-btn">Retour</b-button>
+  <b-button @click="createAd" class="step-btn">Valider</b-button>
+  </div>
 </div>
 <!-- <b-form-group label="Titre" :state="usernameState">
         <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
@@ -163,7 +169,8 @@ export default {
       price: 0,
       place: '',
       dropFiles: [],
-      currentStep: 1
+      currentStep: 1,
+      categoryError: false
     }
   },
   created () {
@@ -185,7 +192,15 @@ export default {
         .catch(error => this.setError(error, 'Impossible de créer votre annonce'))
     },
     nextStep () {
+      if (!this.category) {
+        this.categoryError = true
+        return
+      }
       this.currentStep++
+      this.categoryError = false
+    },
+    previousStep () {
+      this.currentStep--
     }
   }
 }
@@ -225,6 +240,17 @@ export default {
   text-align: center;
 }
 
+.step-btn {
+  width: 20%;
+  color: white;
+  background-color: #618264;
+  border-color: transparent;
+}
+
+.step-btn:hover {
+  background-color: #79AC78;
+}
+
 .btn {
   color: white;
   background-color: #618264;
@@ -247,5 +273,17 @@ export default {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
+}
+
+.next-previous-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.next-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 </style>
