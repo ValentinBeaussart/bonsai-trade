@@ -18,7 +18,7 @@
         <div v-if="currentStep === 1" class="create-ad-container">
           <h2 class="mb-5">Publier votre annonce</h2>
           <h4 class="mb-4">Choisissez une catégorie</h4>
-          <b-form-select v-model="category" class="m-2 mb-4" required>
+          <b-form-select style="width: 40%" v-model="category" class="m-2 mb-4" required>
   <optgroup label="Bonsaï">
     <option value="Bonsaï">Bonsaï</option>
     <option value="Prébonsaï">Prébonsaï</option>
@@ -46,114 +46,29 @@
 <div v-if="currentStep === 2" class="create-ad-container">
   <h2 class="mb-5">Publier votre annonce</h2>
   <h4 class="mb-4">Informations</h4>
-  <b-form-input v-model="name" placeholder="Azalée Satsuki" class="m-2 mb-4"></b-form-input>
-  <b-form-input v-model="price" placeholder="500" type="number" class="m-2 mb-4"></b-form-input>
-  <b-form-input v-model="place" placeholder="Lyon" class="m-2 mb-4"></b-form-input>
-  <b-form-textarea v-model="description" placeholder="Magnifique azalée, cultivée depuis 20 ans. Floraison estivale blanche. À venir récupérer à Lyon, prix négociable." rows="3" max-rows="6" class="m-2 mb-4"></b-form-textarea>
+  <b-form-group label="Titre">
+  <b-form-input v-model="name" placeholder="Azalée Satsuki" class="mb-4" :state="nameState"></b-form-input>
+  <div v-if="nameError" class="text-danger">Veuillez ajouter un titre à votre annonce.</div>
+</b-form-group>
+<b-form-group label="Prix">
+  <b-form-input v-model="price" type="number" class="mb-4" :state="priceState"></b-form-input>
+  <div v-if="priceError" class="text-danger">Veuillez ajouter un prix à votre annonce.</div>
+</b-form-group>
+<b-form-group label="Localisation">
+  <b-form-input v-model="place" placeholder="Lyon" class="mb-4" :state="placeState"></b-form-input>
+  <div v-if="placeError" class="text-danger">Veuillez ajouter une localisation à votre annonce.</div>
+</b-form-group>
+<b-form-group label="Description">
+  <b-form-textarea v-model="description" placeholder="Magnifique azalée, cultivée depuis 20 ans. Floraison estivale blanche. À venir récupérer sur Lyon, prix négociable." rows="3" max-rows="6" class="mb-4" :state="descriptionState"></b-form-textarea>
+  <div v-if="descriptionError" class="text-danger">Veuillez ajouter une description à votre annonce.</div>
+</b-form-group>
   <div class="next-previous-btn">
   <b-button @click="previousStep" class="step-btn">Retour</b-button>
-  <b-button @click="createAd" class="step-btn">Valider</b-button>
+  <b-button @click="nextStep2" class="step-btn">Suivant</b-button>
   </div>
 </div>
-<!-- <b-form-group label="Titre" :state="usernameState">
-        <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
-          placeholder="BonsaiTradeDu69"></b-form-input>
-        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
-      </b-form-group>
-      <b-form-group label="Titre" :state="usernameState">
-        <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
-          placeholder="BonsaiTradeDu69"></b-form-input>
-        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
-      </b-form-group>
-      <b-form-group label="Titre" :state="usernameState">
-        <b-form-textarea
-      id="textarea"
-      v-model="text"
-      placeholder="Enter something..."
-      rows="3"
-      max-rows="6"
-    ></b-form-textarea>
-        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
-      </b-form-group>
-      <b-form-group label="Titre" :state="usernameState">
-        <b-form-input id="input-username" type="text" v-model="username" :state="usernameState" trim
-          placeholder="BonsaiTradeDu69"></b-form-input>
-        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
-      </b-form-group>
-        <b-form-group label="Images" label-cols-sm="2">
-    <b-form-file id="file-default"></b-form-file>
-        <div v-if="usernameError" class="text-danger">Veuillez saisir votre nom d'utilisateur.</div>
-      </b-form-group> -->
-
-          <!-- <b-field label="Titre *">
-            <b-input placeHolder="Azalée Satsuki" class="input-info" v-model="name"></b-input>
-        </b-field>
-        <b-field label="Localisation *">
-            <b-input placeHolder="Lyon" class="input-info" v-model="place"></b-input>
-        </b-field>
-        <b-field label="Prix *">
-            <b-input placeHolder="500" class="input-info" v-model="price"></b-input>
-        </b-field>
-        <b-field label="Description *">
-            <b-input placeHolder="Jolie petite Azalée Satsuki, cultivée depuis 20 ans. Belle floraison printanière/estivale blanche. Prix négociable... " class="input-info"  v-model="description"
-            maxlength="100" type="textarea"></b-input>
-        </b-field>
-        <b-field label="Ajouter des photos *">
-            <b-upload v-model="dropFiles"
-                multiple
-                drag-drop>
-                <section class="section">
-                    <div class="content has-text-centered">
-                        <p>
-                            <b-icon
-                                icon="upload"
-                                size="is-large">
-                            </b-icon>
-                        </p>
-                        <p>Déposez vos fichiers ici ou cliquez pour télécharger</p>
-                    </div>
-                </section>
-            </b-upload>
-        </b-field>
-
-        <div class="tags">
-            <span v-for="(file, index) in dropFiles"
-                :key="index"
-                class="tag is-primary" >
-                {{file.name}}
-                <button class="delete is-small"
-                    type="button"
-                    @click="deleteDropFile(index)">
-                </button>
-            </span>
-        </div>
-        </b-step-item>
-        <b-step-item class="step-item" label="Confirmer" icon="check">
-          <p><strong>Catégorie :</strong> {{ category }}</p>
-          <p><strong>Titre :</strong> {{ name }}</p>
-          <p><strong>Prix :</strong> {{ price }} €</p>
-          <p><strong>Localisation :</strong> {{ place }}</p>
-          <p><strong>Description :</strong> {{ description }}</p>
-          <b-button
-               class="politics-btn"
-                @click="confirmCustom">
-                Règles à respecter
-              </b-button>
-        </b-step-item>
-
-        <template v-if="customNavigation"
-        #navigation="{previous, next}">
-        <div class="btn-next-step-container">
-          <b-button @click.prevent="previous.action" @click="currentStep-- && checkFields()"
-    type="is-primary" class="next-previous-step-btn">Retour</b-button>
-          <b-button v-if="currentStep === 1 || currentStep === 2" @click.prevent="next.action" @click="currentStep++ && checkFields()"
-    type="is-primary" class="next-previous-step-btn" :disabled="!allFieldsFilled">Valider</b-button>
-    <b-button v-if="currentStep === 3" @click="createAd()"
-    type="is-primary" class="next-previous-step-btn">Valider</b-button>
+<div v-if="currentStep === 3" class="create-ad-container">
   </div>
-      </template>
-</b-steps> -->
-
 </div>
 </div>
 </template>
@@ -170,7 +85,15 @@ export default {
       place: '',
       dropFiles: [],
       currentStep: 1,
-      categoryError: false
+      categoryError: false,
+      nameState: null,
+      placeState: null,
+      priceState: null,
+      descriptionState: null,
+      nameError: false,
+      descriptionError: false,
+      priceError: false,
+      placeError: false
     }
   },
   created () {
@@ -189,7 +112,45 @@ export default {
             window.location.reload()
           }, 1500)
         })
-        .catch(error => this.setError(error, 'Impossible de créer votre annonce'))
+        .catch()
+    },
+    nextStep2 () {
+      if (!this.name) {
+        this.nameState = false
+        this.nameError = true
+      } else {
+        this.nameState = null
+        this.nameError = false
+      }
+
+      if (!this.price) {
+        this.priceState = false
+        this.priceError = true
+      } else {
+        this.priceState = null
+        this.priceError = false
+      }
+
+      if (!this.place) {
+        this.placeState = false
+        this.placeError = true
+      } else {
+        this.placeState = null
+        this.placeError = false
+      }
+
+      if (!this.description) {
+        this.descriptionState = false
+        this.descriptionError = true
+      } else {
+        this.descriptionState = null
+        this.descriptionError = false
+      }
+
+      if (!this.name || !this.description || this.place || this.price) {
+        return
+      }
+      this.currentStep++
     },
     nextStep () {
       if (!this.category) {
@@ -211,6 +172,10 @@ export default {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   height: auto;
+}
+
+.form-group {
+  width: 100%;
 }
 
 .signup-link {
