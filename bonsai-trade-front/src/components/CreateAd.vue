@@ -70,6 +70,15 @@
 <div v-if="currentStep === 3" class="create-ad-container">
   <h2 class="mb-5">Publier votre annonce</h2>
   <h4 class="mb-4">Images</h4>
+  <b-form-file
+      multiple
+      v-model="dropFiles"
+      :state="Boolean(dropFiles)"
+    ></b-form-file>
+    <div class="next-previous-btn mt-4">
+  <b-button @click="previousStep" class="step-btn">Retour</b-button>
+  <b-button @click="nextStep2" class="step-btn">Suivant</b-button>
+  </div>
   </div>
 </div>
 </div>
