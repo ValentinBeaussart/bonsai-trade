@@ -40,34 +40,36 @@
 </b-form-select>
 <b-alert v-if="categoryError" show variant="danger">Veuillez sélectionner une catégorie.</b-alert>
 <div class="next-btn">
-<b-button @click="nextStep" class="step-btn mt-2">Suivant</b-button>
+<b-button @click="nextStep" class="step-btn mt-4">Suivant</b-button>
 </div>
 </div>
 <div v-if="currentStep === 2" class="create-ad-container">
   <h2 class="mb-5">Publier votre annonce</h2>
   <h4 class="mb-4">Informations</h4>
-  <b-form-group label="Titre">
-  <b-form-input v-model="name" placeholder="Azalée Satsuki" class="mb-4" :state="nameState"></b-form-input>
+  <b-form-group label="Titre" class="mt-4" :state="nameState">
+  <b-form-input v-model="name" placeholder="Azalée Satsuki" :state="nameState"></b-form-input>
   <div v-if="nameError" class="text-danger">Veuillez ajouter un titre à votre annonce.</div>
 </b-form-group>
-<b-form-group label="Prix">
-  <b-form-input v-model="price" type="number" class="mb-4" :state="priceState"></b-form-input>
+<b-form-group label="Prix" class="mt-4" :state="priceState">
+  <b-form-input v-model="price" placeholder="500" type="number" :state="priceState"></b-form-input>
   <div v-if="priceError" class="text-danger">Veuillez ajouter un prix à votre annonce.</div>
 </b-form-group>
-<b-form-group label="Localisation">
-  <b-form-input v-model="place" placeholder="Lyon" class="mb-4" :state="placeState"></b-form-input>
+<b-form-group label="Localisation" class="mt-4" :state="placeState">
+  <b-form-input v-model="place" placeholder="Lyon" :state="placeState"></b-form-input>
   <div v-if="placeError" class="text-danger">Veuillez ajouter une localisation à votre annonce.</div>
 </b-form-group>
-<b-form-group label="Description">
-  <b-form-textarea v-model="description" placeholder="Magnifique azalée, cultivée depuis 20 ans. Floraison estivale blanche. À venir récupérer sur Lyon, prix négociable." rows="3" max-rows="6" class="mb-4" :state="descriptionState"></b-form-textarea>
+<b-form-group label="Description" class="mt-4" :state="descriptionState">
+  <b-form-textarea v-model="description" placeholder="Magnifique azalée, cultivée depuis 20 ans. Floraison estivale blanche. À venir récupérer sur Lyon, prix négociable." rows="3" max-rows="6" :state="descriptionState"></b-form-textarea>
   <div v-if="descriptionError" class="text-danger">Veuillez ajouter une description à votre annonce.</div>
 </b-form-group>
-  <div class="next-previous-btn">
+  <div class="next-previous-btn mt-4">
   <b-button @click="previousStep" class="step-btn">Retour</b-button>
   <b-button @click="nextStep2" class="step-btn">Suivant</b-button>
   </div>
 </div>
 <div v-if="currentStep === 3" class="create-ad-container">
+  <h2 class="mb-5">Publier votre annonce</h2>
+  <h4 class="mb-4">Images</h4>
   </div>
 </div>
 </div>
@@ -78,11 +80,11 @@ export default {
   name: 'CreateAd',
   data () {
     return {
-      category: '',
-      name: '',
-      description: '',
-      price: 0,
-      place: '',
+      category: null,
+      name: null,
+      description: null,
+      price: null,
+      place: null,
       dropFiles: [],
       currentStep: 1,
       categoryError: false,
@@ -115,39 +117,17 @@ export default {
         .catch()
     },
     nextStep2 () {
-      if (!this.name) {
-        this.nameState = false
-        this.nameError = true
-      } else {
-        this.nameState = null
-        this.nameError = false
-      }
+      this.nameState = !!this.name
+      this.placeState = !!this.place
+      this.priceState = !!this.price
+      this.descriptionState = !!this.description
 
-      if (!this.price) {
-        this.priceState = false
-        this.priceError = true
-      } else {
-        this.priceState = null
-        this.priceError = false
-      }
+      this.nameError = !this.name
+      this.placeError = !this.place
+      this.priceError = !this.price
+      this.descriptionError = !this.description
 
-      if (!this.place) {
-        this.placeState = false
-        this.placeError = true
-      } else {
-        this.placeState = null
-        this.placeError = false
-      }
-
-      if (!this.description) {
-        this.descriptionState = false
-        this.descriptionError = true
-      } else {
-        this.descriptionState = null
-        this.descriptionError = false
-      }
-
-      if (!this.name || !this.description || this.place || this.price) {
+      if (!this.name || !this.description || !this.place || !this.price) {
         return
       }
       this.currentStep++
