@@ -70,14 +70,24 @@
 <div v-if="currentStep === 3" class="create-ad-container">
   <h2 class="mb-5">Publier votre annonce</h2>
   <h4 class="mb-4">Images</h4>
-  <b-form-file
-      multiple
-      v-model="dropFiles"
-      :state="Boolean(dropFiles)"
-    ></b-form-file>
+  <div class="file-upload">
+    <b-button class="file-upload-btn" type="button" @click="triggerUpload">Ajouter une image</b-button>
+    <div class="image-upload-wrap" ref="uploadWrap" @dragover="addDroppingClass" @dragleave="removeDroppingClass">
+      <input class="file-upload-input" ref="fileInput" type='file' @change="readURL" accept="image/*" />
+      <div class="drag-text">
+        <h3>Drag and drop a file or select add Image</h3>
+      </div>
+    </div>
+    <div class="file-upload-content" ref="fileUploadContent">
+      <img class="file-upload-image" :src="imageUrl" alt="your image" />
+      <div class="image-title-wrap">
+        <button type="button" @click="removeUpload" class="remove-image">Supprimer <span class="image-title">{{ imageName }}</span></button>
+      </div>
+    </div>
+  </div>
     <div class="next-previous-btn mt-4">
   <b-button @click="previousStep" class="step-btn">Retour</b-button>
-  <b-button @click="nextStep2" class="step-btn">Suivant</b-button>
+  <b-button @click="toto" class="step-btn">Valider</b-button>
   </div>
   </div>
 </div>
@@ -94,7 +104,8 @@ export default {
       description: null,
       price: null,
       place: null,
-      dropFiles: [],
+      dropFiles: null,
+      titi: [],
       currentStep: 1,
       categoryError: false,
       nameState: null,
@@ -104,7 +115,9 @@ export default {
       nameError: false,
       descriptionError: false,
       priceError: false,
-      placeError: false
+      placeError: false,
+      imageUrl: '',
+      imageName: ''
     }
   },
   created () {
@@ -114,7 +127,6 @@ export default {
     signedIn () {
       return localStorage.signedIn
     },
-
     createAd () {
       this.$http.secured.post('/api/v1/ads/', { name: this.name, category_name: this.category, description: this.description, price: this.price, place: this.place })
         .then(() => {
@@ -151,6 +163,41 @@ export default {
     },
     previousStep () {
       this.currentStep--
+    },
+    toto () {
+      if (this.dropFiles) {
+        this.titi.push(this.dropFiles)
+      }
+    },
+    triggerUpload () {
+      this.$refs.fileInput.click()
+    },
+    readURL (event) {
+      const input = event.target
+      if (input.files && input.files[0]) {
+        const reader = new FileReader()
+
+        reader.onload = (e) => {
+          this.imageUrl = e.target.result
+          this.$refs.uploadWrap.style.display = 'none'
+          this.$refs.fileUploadContent.style.display = 'block'
+          this.imageName = input.files[0].name
+        }
+
+        reader.readAsDataURL(input.files[0])
+      }
+    },
+    removeUpload () {
+      this.$refs.fileInput.value = ''
+      this.imageUrl = ''
+      this.$refs.uploadWrap.style.display = 'block'
+      this.$refs.fileUploadContent.style.display = 'none'
+    },
+    addDroppingClass () {
+      this.$refs.uploadWrap.classList.add('image-dropping')
+    },
+    removeDroppingClass () {
+      this.$refs.uploadWrap.classList.remove('image-dropping')
     }
   }
 }
@@ -161,6 +208,112 @@ export default {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   height: auto;
+}
+
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: white;
+  background-color: #618264;
+  border-color: transparent;
+  padding: 10px;
+  outline: none;
+}
+
+.file-upload-btn:hover {
+  background-color: #79AC78;
+    color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #618264;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #79AC78;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  color: #618264;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
 }
 
 .form-group {
