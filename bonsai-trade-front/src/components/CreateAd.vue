@@ -17,7 +17,7 @@
       <div v-else>
         <div v-if="currentStep === 1" class="create-ad-container">
           <h2 class="mb-5">Publier votre annonce</h2>
-          <h4 class="mb-4">Choisissez une catégorie</h4>
+          <h4 class="mb-4">Catégorie</h4>
           <b-form-select style="width: 40%" v-model="category" class="m-2 mb-4" required>
   <optgroup label="Bonsaï">
     <option value="Bonsaï">Bonsaï</option>
@@ -83,6 +83,11 @@
 <div class="d-flex flex-wrap mt-2">
   <img v-for="file in images" :key="file.name" :src="createObjectURL(file)" class="mr-2 mb-2" style="width: 100px; height: 100px;">
 </div>
+<div v-if="showImagesAlert" class="mt-3">
+  <b-alert variant="danger" show>
+    5 images maximum par annonce.
+  </b-alert>
+</div>
 <div class="next-previous-btn mt-4">
   <b-button @click="previousStep" class="step-btn">Retour</b-button>
   <b-button @click="createAd" class="step-btn">Valider</b-button>
@@ -113,7 +118,8 @@ export default {
       nameError: false,
       descriptionError: false,
       priceError: false,
-      placeError: false
+      placeError: false,
+      showImagesAlert: false
     }
   },
   created () {
@@ -167,6 +173,8 @@ export default {
       if (this.dropFiles && this.images.length < 5) {
         this.images.push(this.dropFiles)
         this.dropFiles = null
+      } else {
+        this.showImagesAlert = true
       }
     },
     removeImage (fileToRemove) {

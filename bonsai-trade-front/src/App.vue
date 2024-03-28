@@ -2,7 +2,6 @@
 <template>
   <div id="app">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-
     <Navbar></Navbar>
     <router-view/>
     <Footer></Footer>
