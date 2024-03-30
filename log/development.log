@@ -21535,3 +21535,16 @@ Processing by Api::V1::AdsController#index as HTML
 Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 5161)
 
 
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-03-30 17:17:05 +0100
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:60:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:60:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11]]
+  ↳ app/controllers/api/v1/ads_controller.rb:60:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 5161)
+
+

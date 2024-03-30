@@ -5,6 +5,7 @@ import Home from '@/components/Home'
 import Signin from '@/components/Signin'
 import Signup from '@/components/Signup'
 import CreateAd from '@/components/CreateAd'
+import Profile from '@/components/Profile'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/createad',
       name: 'CreateAd',
       component: CreateAd
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     }
   ]
 })
