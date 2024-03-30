@@ -17,7 +17,7 @@
       <div v-else>
         <div v-if="currentStep === 1" class="create-ad-container">
           <h2 class="mb-5">Publier votre annonce</h2>
-          <h4 class="mb-4">Catégorie</h4>
+          <h4 class="mb-4">Choisissez une catégorie</h4>
           <b-form-select style="width: 40%" v-model="category" class="m-2 mb-4" required>
   <optgroup label="Bonsaï">
     <option value="Bonsaï">Bonsaï</option>
@@ -45,7 +45,7 @@
 </div>
 <div v-if="currentStep === 2" class="create-ad-container">
   <h2 class="mb-5">Publier votre annonce</h2>
-  <h4 class="mb-4">Informations</h4>
+  <h4 class="mb-4">Renseignez les informations</h4>
   <b-form-group label="Titre" class="mt-4" :state="nameState">
   <b-form-input v-model="name" placeholder="Azalée Satsuki" :state="nameState"></b-form-input>
   <div v-if="nameError" class="text-danger">Veuillez ajouter un titre à votre annonce.</div>
@@ -69,7 +69,7 @@
 </div>
 <div v-if="currentStep === 3" class="create-ad-container">
   <h2 class="mb-5">Publier votre annonce</h2>
-  <h4 class="mb-4">Images</h4>
+  <h4 class="mb-4">Ajoutez des photos</h4>
   <b-form-group>
     <b-form-file v-model="dropFiles" accept=".jpg, .png, .jpeg" id="file-default" browseText="Ajouter" placeholder="Aucun fichier sélectionné"></b-form-file>
   </b-form-group>
