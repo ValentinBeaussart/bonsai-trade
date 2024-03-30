@@ -25,7 +25,6 @@ module Api
 
       # POST /ads
       def create
-        debugger
         category_name = params[:category_name]
         category = Category.find_by(name: category_name)
 
