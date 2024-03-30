@@ -5,6 +5,7 @@
     </div>
     <div class="right-column">
       <h2>Profile</h2>
+      <p>{{ current_user.email }}</p>
     </div>
   </div>
 </template>
