@@ -1,11 +1,10 @@
-
 <template>
   <div id="app">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <Navbar></Navbar>
-    <router-view/>
-    <Footer></Footer>
-  </div>
+      <Navbar></Navbar>
+      <router-view/>
+      <Footer></Footer>
+    </div>
 </template>
 
 <script>
@@ -22,13 +21,13 @@ export default {
 
 <style>
 html, body, #app{
-  height: 100%;
   margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 body {
   background-image: url('./assets/vigne-vierge.jpg');
 }
-
 </style>

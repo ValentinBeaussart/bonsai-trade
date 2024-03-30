@@ -1,9 +1,7 @@
 <template>
-  <div class="wrapper">
-    <div class="content">
-      <div class="footer">
-        <div>&copy;<span>{{ currentYear }}</span><span> Bonsai Trade. Tous droits réservés.</span></div>
-      </div>
+  <div class="content">
+    <div class="footer">
+      <div>&copy;<span>{{ currentYear }}</span><span> Bonsai Trade. Tous droits réservés.</span></div>
     </div>
   </div>
 </template>
@@ -23,14 +21,10 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
+.content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-.content {
-  flex: 1;
+  height: 100%;
 }
 
 .footer {
@@ -42,5 +36,6 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
+  margin-top: auto;
 }
 </style>
