@@ -61,6 +61,7 @@ module Api
         end
       end
 
+      # Format date
       def format_date(date_string)
         date = Date.parse(date_string)
         date.strftime('%d/%m/%Y')
