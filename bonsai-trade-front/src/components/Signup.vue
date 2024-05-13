@@ -141,4 +141,8 @@ export default {
   padding: 20px;
   border-radius: 5px;
 }
+
+#input-username, #input-email, #input-password, #input-password_confirmation {
+  width: 50vh;
+}
 </style>

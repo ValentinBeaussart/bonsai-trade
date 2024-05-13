@@ -138,4 +138,8 @@ export default {
   background-color: #618264;
   border-color: transparent;
 }
+
+#input-email, #input-password {
+  width: 50vh;
+}
 </style>
