@@ -2,10 +2,26 @@
   <div class="profile-container">
     <div class="left-column">
       <h2>Mes annonces</h2>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+      <p>Contenu supplémentaire pour Mes annonces.</p>
+
+      <p>Encore du contenu supplémentaire pour Mes annonces.</p>
     </div>
     <div class="right-column">
+      <h2>Mes informations</h2>
+      <i class="bi bi-person"></i>
+      <br>
+      <i class="bi bi-envelope"></i>
       <h2>Profile</h2>
-      <p>{{ current_user.email }}</p>
+
     </div>
   </div>
 </template>
@@ -13,7 +29,7 @@
 <style scoped>
 .profile-container {
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start; /* Permet des hauteurs différentes */
   width: 80%;
   margin: 100px auto;
 }

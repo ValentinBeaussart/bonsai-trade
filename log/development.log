@@ -22436,3 +22436,2064 @@ Processing by Api::V1::AdsController#index as HTML
 Completed 200 OK in 25ms (Views: 3.5ms | ActiveRecord: 6.5ms | Allocations: 5792)
 
 
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:13:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (1.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 178ms (Views: 0.5ms | ActiveRecord: 11.3ms | Allocations: 43699)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:13:41 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000107307b60>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valll"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 298ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 5614)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:13:46 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllllll", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllllll"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x000000010630a578>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllllll", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllllll"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valllllll"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 281ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 3394)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:13:53 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00000001066c82a0>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Vallllllljjj"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 283ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 3278)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:13:54 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000106b05b10>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}} }[0m
+Started POST "/signup" for ::1 at 2024-05-13 23:13:54 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000106ac7950>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Vallllllljjj"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 313ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 4367)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:13:54 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000106bcbf90>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Vallllllljjj"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Vallllllljjj"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 287ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 7638)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Vallllllljjj"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 280ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 6582)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:14:10 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"toto@toto.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"kgfjsqegfes", "signup"=>{"email"=>"toto@toto.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"kgfjsqegfes"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000106dcd398>, params: {"email"=>"toto@toto.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"kgfjsqegfes", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"toto@toto.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"kgfjsqegfes"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kgfjsqegfes"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "toto@toto.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "toto@toto.fr"], ["password_digest", "[FILTERED]"], ["created_at", "2024-05-13 21:14:10.551171"], ["updated_at", "2024-05-13 21:14:10.551171"], ["username", "kgfjsqegfes"]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 200 OK in 307ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 5301)
+
+
+Started POST "/api/v1/ads/" for ::1 at 2024-05-13 23:14:41 +0200
+Processing by Api::V1::AdsController#create as HTML
+  Parameters: {"name"=>"jhjuh", "category_name"=>"Prébonsaï", "description"=>"kjnkj", "price"=>"788", "place"=>"hioiu", "ad"=>{"name"=>"jhjuh", "description"=>"kjnkj", "place"=>"hioiu", "price"=>"788"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Prébonsaï"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mAd Create (0.9ms)[0m  [1m[32mINSERT INTO "ads" ("name", "latin_name", "description", "place", "price", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "jhjuh"], ["latin_name", nil], ["description", "kjnkj"], ["place", "hioiu"], ["price", 788], ["category_id", 10], ["user_id", 7], ["created_at", "2024-05-13 21:14:41.164806"], ["updated_at", "2024-05-13 21:14:41.164806"]]
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+Completed 201 Created in 46ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 9065)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:14:42 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 5793)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:14:58 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 5719)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:15:14 +0200
+Started DELETE "/signin" for ::1 at 2024-05-13 23:15:14 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 5738)
+
+
+Processing by SigninController#destroy as HTML
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 965)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:15:15 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 5908)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:15:54 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 26ms (Views: 0.7ms | ActiveRecord: 1.9ms | Allocations: 5717)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:26:23 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 5.7ms | Allocations: 6039)
+
+
+Started POST "/signin" for ::1 at 2024-05-13 23:26:53 +0200
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "signin"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 285ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1193)
+
+
+Started POST "/signin" for ::1 at 2024-05-13 23:27:01 +0200
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"toto@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"toto@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "toto@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 278ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 608)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:27:07 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 5717)
+
+
+Started DELETE "/signin" for ::1 at 2024-05-13 23:27:07 +0200
+Processing by SigninController#destroy as HTML
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 473)
+
+
+Started POST "/refresh" for ::1 at 2024-05-13 23:27:07 +0200
+Processing by RefreshController#create as HTML
+  Parameters: {"refresh"=>{}}
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 550)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:27:17 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x00000001076a12f8>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valll"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 282ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 3615)
+
+
+Started POST "/signup" for ::1 at 2024-05-13 23:27:24 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.frhh", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllhjhhhhhhh", "signup"=>{"email"=>"elboboss@hotmail.frhh", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllhjhhhhhhh"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000107702fd0>, params: {"email"=>"elboboss@hotmail.frhh", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllhjhhhhhhh", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.frhh", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllhjhhhhhhh"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valllhjhhhhhhh"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.frhh"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 300ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 3115)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:27:30 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 1.2ms | Allocations: 5792)
+
+
+Started GET "/api/v1/ads?search=r" for ::1 at 2024-05-13 23:27:37 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"r"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%r%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%r%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 4744)
+
+
+Started GET "/api/v1/ads?search=re" for ::1 at 2024-05-13 23:27:37 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"re"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%re%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%re%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 4393)
+
+
+Started GET "/api/v1/ads?search=ren" for ::1 at 2024-05-13 23:27:40 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"ren"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%ren%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%ren%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 4016)
+
+
+Started GET "/api/v1/ads?search=re" for ::1 at 2024-05-13 23:27:41 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"re"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%re%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%re%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 4393)
+
+
+Started GET "/api/v1/ads?search=r" for ::1 at 2024-05-13 23:27:41 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"r"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%r%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%r%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 4709)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-13 23:27:42 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5717)
+
+
+Started GET "/api/v1/ads?search=t" for ::1 at 2024-05-13 23:27:43 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"t"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 5399)
+
+
+Started GET "/api/v1/ads?search=to" for ::1 at 2024-05-13 23:27:43 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"to"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=tot" for ::1 at 2024-05-13 23:27:43 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"tot"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=toto" for ::1 at 2024-05-13 23:27:43 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"toto"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%toto%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%toto%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=tot" for ::1 at 2024-05-13 23:27:44 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"tot"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=to" for ::1 at 2024-05-13 23:27:44 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"to"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=t" for ::1 at 2024-05-13 23:27:44 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"t"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 5397)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-13 23:27:44 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5717)
+
+
+Started GET "/api/v1/ads?search=f" for ::1 at 2024-05-13 23:27:45 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"f"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%f%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%f%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 3170)
+
+
+Started GET "/api/v1/ads?search=fh" for ::1 at 2024-05-13 23:27:45 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Started GET "/api/v1/ads?search=fhi" for ::1 at 2024-05-13 23:27:45 +0200
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/v1/ads?search=fhis" for ::1 at 2024-05-13 23:27:45 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhi"}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhi%')[0m
+Started GET "/api/v1/ads?search=fhisd" for ::1 at 2024-05-13 23:27:45 +0200
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhi%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1581)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhis"}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhis%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhis%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1272)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisd"}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhisdi" for ::1 at 2024-05-13 23:27:45 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdi"}
+  [1m[36mAd Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdi%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdi%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhisdid" for ::1 at 2024-05-13 23:27:46 +0200
+Started GET "/api/v1/ads?search=fhisdidf" for ::1 at 2024-05-13 23:27:46 +0200
+Started GET "/api/v1/ads?search=fhisdidfh" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdid"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdid%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdid%')[0m
+  Parameters: {"search"=>"fhisdidf"}
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Processing by Api::V1::AdsController#index as HTML
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2362)
+
+
+  Parameters: {"search"=>"fhisdidfh"}
+  [1m[36mAd Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidf%')[0m
+  [1m[36mAd Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 3075)
+
+
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2352)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhs" for ::1 at 2024-05-13 23:27:46 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsd" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhs"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1290)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsd"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdj" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjh" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhf" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhf"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfk" for ::1 at 2024-05-13 23:27:46 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfks" for ::1 at 2024-05-13 23:27:46 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdj" for ::1 at 2024-05-13 23:27:46 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksd" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfk"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1269)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfks"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfks%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfks%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1308)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksd"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1285)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdj"}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjf" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjf"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjff" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjff"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjff%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjff%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1274)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffk" for ::1 at 2024-05-13 23:27:46 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkj" for ::1 at 2024-05-13 23:27:46 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffk"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffk%')[0m
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkj"}
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkj%')[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1785)
+
+
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1928)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjh" for ::1 at 2024-05-13 23:27:47 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhs" for ::1 at 2024-05-13 23:27:47 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1273)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhs"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsj" for ::1 at 2024-05-13 23:27:47 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjf" for ::1 at 2024-05-13 23:27:47 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjfh" for ::1 at 2024-05-13 23:27:47 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjfhk" for ::1 at 2024-05-13 23:27:47 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1291)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjf"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1301)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjfh"}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfh%')[0m
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjfhk"}
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 2155)
+
+
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1642)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjfhkd" for ::1 at 2024-05-13 23:27:47 +0200
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjfhkds" for ::1 at 2024-05-13 23:27:47 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjfhkd"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhkd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhkd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1283)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjfhkds"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhkds%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhkds%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjfhkd" for ::1 at 2024-05-13 23:27:47 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjfhkd"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhkd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhkd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjfhk" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjfhk"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfhk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjfh" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjfh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjfh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsjf" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsjf"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhsj" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhsj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhsj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjhs" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjhs"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkjh" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkjh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffkj" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffkj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffkj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1267)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjffk" for ::1 at 2024-05-13 23:27:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjffk"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjffk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjff" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjff"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjff%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjff%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdjf" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdjf"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdjf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksdj" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksdj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfksd" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfksd"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfksd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfks" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfks"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfks%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfks%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhfk" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhfk"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhfk%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjhf" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjhf"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjhf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdjh" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdjh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsdj" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsdj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsdj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhsd" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhsd"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhsd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhsd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfhs" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfhs"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfhs%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1266)
+
+
+Started GET "/api/v1/ads?search=fhisdidfh" for ::1 at 2024-05-13 23:27:49 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidfh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidfh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidfh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhisdidf" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdidf"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdidf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdidf%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhisdid" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdid"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdid%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdid%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhisdi" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisdi"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisdi%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisdi%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhisd" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhisd"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhisd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhisd%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhis" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhis"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhis%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhis%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fhi" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fhi"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fhi%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fhi%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=fh" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"fh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%fh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%fh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=f" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"f"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%f%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%f%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3170)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-13 23:27:50 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 5717)
+
+
+Started GET "/api/v1/ads?search=j" for ::1 at 2024-05-13 23:27:53 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"j"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=jg" for ::1 at 2024-05-13 23:27:53 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jg"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jg%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jg%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jgh" for ::1 at 2024-05-13 23:27:53 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jgh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jgh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jgh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jghg" for ::1 at 2024-05-13 23:27:53 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jghg"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jghg%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jghg%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jghgh" for ::1 at 2024-05-13 23:27:54 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jghgh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jghgh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jghgh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-13 23:27:55 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5717)
+
+
+Started GET "/api/v1/ads?search=j" for ::1 at 2024-05-13 23:27:59 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"j"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=jh" for ::1 at 2024-05-13 23:27:59 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=jhj" for ::1 at 2024-05-13 23:27:59 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jhj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=jhjh" for ::1 at 2024-05-13 23:27:59 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jhjh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jhjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jhjh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jhj" for ::1 at 2024-05-13 23:28:00 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jhj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=jh" for ::1 at 2024-05-13 23:28:01 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=j" for ::1 at 2024-05-13 23:28:02 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"j"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-13 23:28:04 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 5717)
+
+
+Started GET "/api/v1/ads?search=j" for ::1 at 2024-05-13 23:28:05 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"j"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=jb" for ::1 at 2024-05-13 23:28:05 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jb"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jbh" for ::1 at 2024-05-13 23:28:05 +0200
+Started GET "/api/v1/ads?search=jbhj" for ::1 at 2024-05-13 23:28:05 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jbh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jbh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jbh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1281)
+
+
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jbhj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jbhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jbhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jbhjb" for ::1 at 2024-05-13 23:28:05 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jbhjb"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jbhjb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jbhjb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jbhjbj" for ::1 at 2024-05-13 23:28:05 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jbhjbj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jbhjbj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jbhjbj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jbhjb" for ::1 at 2024-05-13 23:28:06 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jbhjb"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jbhjb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jbhjb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jbhj" for ::1 at 2024-05-13 23:28:06 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jbhj"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jbhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jbhj%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jbh" for ::1 at 2024-05-13 23:28:06 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jbh"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jbh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jbh%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=jb" for ::1 at 2024-05-13 23:28:07 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"jb"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%jb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%jb%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=j" for ::1 at 2024-05-13 23:28:07 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"j"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%j%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3009)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-13 23:28:07 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 11ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 5717)
+
+
+Started POST "/signin" for ::1 at 2024-05-13 23:33:39 +0200
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "signin"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 266ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 5890)
+
+
+Started POST "/api/v1/ads/" for ::1 at 2024-05-13 23:34:32 +0200
+Processing by Api::V1::AdsController#create as HTML
+  Parameters: {"name"=>"hv", "category_name"=>"Yamadori", "description"=>"hg", "price"=>"1", "place"=>"hv", "ad"=>{"name"=>"hv", "description"=>"hg", "place"=>"hv", "price"=>"1"}}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Yamadori"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mAd Create (0.3ms)[0m  [1m[32mINSERT INTO "ads" ("name", "latin_name", "description", "place", "price", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "hv"], ["latin_name", nil], ["description", "hg"], ["place", "hv"], ["price", 1], ["category_id", 11], ["user_id", 5], ["created_at", "2024-05-13 21:34:32.504880"], ["updated_at", "2024-05-13 21:34:32.504880"]]
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+Completed 201 Created in 20ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 11852)
+
+
+Started POST "/api/v1/ads/" for ::1 at 2024-05-13 23:34:40 +0200
+Processing by Api::V1::AdsController#create as HTML
+  Parameters: {"name"=>"hv", "category_name"=>"Yamadori", "description"=>"hg", "price"=>"1", "place"=>"hv", "ad"=>{"name"=>"hv", "description"=>"hg", "place"=>"hv", "price"=>"1"}}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Yamadori"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mAd Create (0.2ms)[0m  [1m[32mINSERT INTO "ads" ("name", "latin_name", "description", "place", "price", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "hv"], ["latin_name", nil], ["description", "hg"], ["place", "hv"], ["price", 1], ["category_id", 11], ["user_id", 5], ["created_at", "2024-05-13 21:34:40.325078"], ["updated_at", "2024-05-13 21:34:40.325078"]]
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:34:in `create'
+Completed 201 Created in 10ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 4266)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:34:53 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 26ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 6479)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:35:10 +0200
+Started DELETE "/signin" for ::1 at 2024-05-13 23:35:10 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (1.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+Processing by SigninController#destroy as HTML
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 1.6ms | Allocations: 6739)
+
+
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3751)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-13 23:35:11 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 17ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 6058)
+
+
+Started POST "/signin" for ::1 at 2024-05-13 23:35:45 +0200
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "signin"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 286ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1022)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-05-23 23:34:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 100ms (Views: 0.5ms | ActiveRecord: 4.2ms | Allocations: 44162)
+
+
+Started POST "/api/v1/ads/" for 127.0.0.1 at 2024-05-23 23:35:36 +0200
+Processing by Api::V1::AdsController#create as HTML
+  Parameters: {"name"=>"dd", "category_name"=>"Bonsaï", "description"=>"ddd", "price"=>"90", "place"=>"ddff", "ad"=>{"name"=>"dd", "description"=>"ddd", "place"=>"ddff", "price"=>"90"}}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Bonsaï"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/ads_controller.rb:29:in `create'
+Completed 404 Not Found in 18ms (ActiveRecord: 0.4ms | Allocations: 2418)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:10:in `current_user'
+app/controllers/api/v1/ads_controller.rb:31:in `create'
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-05-23 23:35:55 +0200
+Started DELETE "/signin" for 127.0.0.1 at 2024-05-23 23:35:55 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 6393)
+
+
+Processing by SigninController#destroy as HTML
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 239)
+
+
+Started POST "/refresh" for 127.0.0.1 at 2024-05-23 23:35:56 +0200
+Processing by RefreshController#create as HTML
+  Parameters: {"refresh"=>{}}
+Completed 401 Unauthorized in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 212)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-05-23 23:36:27 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 1.3ms | Allocations: 6282)
+
+
+Started POST "/signin" for 127.0.0.1 at 2024-05-23 23:36:35 +0200
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]", "signin"=>{"email"=>"valentin.beaussart@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valentin.beaussart@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 200 OK in 303ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2079)
+
+
+Started GET "/api/v1/ads" for 127.0.0.1 at 2024-05-23 23:37:07 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:42:20 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:43:29 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 23ms (Views: 1.3ms | ActiveRecord: 1.1ms | Allocations: 6059)
+
+
+Started GET "/api/v1/ads?search=t" for ::1 at 2024-05-23 23:43:51 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"t"}
+  [1m[36mAd Count (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 3.1ms | Allocations: 5439)
+
+
+Started GET "/api/v1/ads?search=to" for ::1 at 2024-05-23 23:43:51 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"to"}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=tot" for ::1 at 2024-05-23 23:43:51 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"tot"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=toto" for ::1 at 2024-05-23 23:43:51 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"toto"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%toto%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%toto%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=tot" for ::1 at 2024-05-23 23:43:52 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"tot"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%tot%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=to" for ::1 at 2024-05-23 23:43:53 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"to"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%to%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=t" for ::1 at 2024-05-23 23:43:53 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"t"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (1.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 5397)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-23 23:43:54 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads?search=t" for ::1 at 2024-05-23 23:43:55 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"t"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%t%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5397)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-23 23:43:56 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 15ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads?search=h" for ::1 at 2024-05-23 23:43:58 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"h"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%h%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%h%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 9], ["id", 10], ["id", 11]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 3810)
+
+
+Started GET "/api/v1/ads?search=he" for ::1 at 2024-05-23 23:43:58 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"he"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%he%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%he%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/api/v1/ads?search=h" for ::1 at 2024-05-23 23:43:59 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"h"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%h%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%h%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 9], ["id", 10], ["id", 11]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 3810)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-23 23:44:05 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads?search=r" for ::1 at 2024-05-23 23:44:07 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>"r"}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads" WHERE (name LIKE '%r%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE (name LIKE '%r%')[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 4]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 9]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 4709)
+
+
+Started GET "/api/v1/ads?search=" for ::1 at 2024-05-23 23:44:08 +0200
+Processing by Api::V1::AdsController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:45:54 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 20ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:46:48 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:47:16 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 27ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 6058)
+
+
+Started DELETE "/signin" for ::1 at 2024-05-23 23:47:16 +0200
+Processing by SigninController#destroy as HTML
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 93)
+
+
+Started POST "/refresh" for ::1 at 2024-05-23 23:47:17 +0200
+Processing by RefreshController#create as HTML
+  Parameters: {"refresh"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 86)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:48:05 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 26ms (Views: 1.0ms | ActiveRecord: 1.6ms | Allocations: 6058)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:48:12 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 27ms (Views: 0.9ms | ActiveRecord: 2.5ms | Allocations: 6058)
+
+
+Started POST "/signin" for ::1 at 2024-05-23 23:48:42 +0200
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "signin"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 289ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 613)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:48:53 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113be6d60>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valll"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 278ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 4533)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:48:59 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113c770b8>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valllddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 286ms (Views: 0.1ms | ActiveRecord: 1.9ms | Allocations: 3315)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:49:03 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113cdfeb0>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (33.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valllddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 368ms (Views: 0.2ms | ActiveRecord: 34.0ms | Allocations: 3363)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:49:08 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fddr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "signup"=>{"email"=>"elboboss@hotmail.fddr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113d4c718>, params: {"email"=>"elboboss@hotmail.fddr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fddr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valllddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fddr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 288ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 3113)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:49:18 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113d55d90>, params: {"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valllddd"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valllddd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.fr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 285ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 3342)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:49:25 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.frd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "signup"=>{"email"=>"elboboss@hotmail.frd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113dce420>, params: {"email"=>"elboboss@hotmail.frd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.frd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Valll"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Valll"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.frd"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 289ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 3330)
+
+
+Started POST "/signin" for ::1 at 2024-05-23 23:49:35 +0200
+Processing by SigninController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.frd", "password"=>"[FILTERED]", "signin"=>{"email"=>"elboboss@hotmail.frd", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.frd"], ["LIMIT", 1]]
+  ↳ app/controllers/signin_controller.rb:7:in `create'
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 580)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-23 23:51:58 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 6130)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:52:28 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lo", "signup"=>{"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lo"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113ef6d48>, params: {"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lo", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lo"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lo"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 422 Unprocessable Entity in 287ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 3269)
+
+
+Started POST "/signup" for ::1 at 2024-05-23 23:52:32 +0200
+Processing by SignupController#create as HTML
+  Parameters: {"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lor", "signup"=>{"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lor"}}
+[31mUnpermitted parameter: :signup. Context: { controller: SignupController, action: create, request: #<ActionDispatch::Request:0x0000000113f5ff00>, params: {"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lor", "controller"=>"signup", "action"=>"create", "signup"=>{"email"=>"elboboss@hotmail.frr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"lor"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lor"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elboboss@hotmail.frr"], ["LIMIT", 1]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "elboboss@hotmail.frr"], ["password_digest", "[FILTERED]"], ["created_at", "2024-05-23 21:52:32.490058"], ["updated_at", "2024-05-23 21:52:32.490058"], ["username", "lor"]]
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signup_controller.rb:6:in `create'
+Completed 200 OK in 297ms (Views: 0.1ms | ActiveRecord: 6.7ms | Allocations: 4517)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-24 00:00:13 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (5.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 9.0ms | Allocations: 6380)
+
+
+Started GET "/api/v1/ads" for ::1 at 2024-05-24 00:01:00 +0200
+Processing by Api::V1::AdsController#index as HTML
+  [1m[36mAd Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:16:in `index'
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 4], ["id", 7], ["id", 5]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 1], ["id", 11], ["id", 9], ["id", 10]]
+  ↳ app/controllers/api/v1/ads_controller.rb:59:in `formatted_ads'
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 1.7ms | Allocations: 6058)
+
+
